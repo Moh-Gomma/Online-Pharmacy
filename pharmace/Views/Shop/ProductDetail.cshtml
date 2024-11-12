@@ -1,0 +1,179 @@
+﻿@model pharmace.Models.Proudect
+
+@{
+    ViewData["Title"] = "تفاصيل المنتج ";
+    List<Proudect> pro = ViewBag.Proudect;
+}
+
+
+
+
+<!--== Start Preloader Content ==-->
+<div class="preloader-wrap">
+    <div class="preloader">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!--== End Preloader Content ==-->
+
+
+
+
+<div class="container my-5">
+    <div class="row holding">
+        <div class="col-md-6 mb-5">
+            <img src="@Url.Action("GetImage", "Dashboard", new { fileName =  Model.image })" alt="Product" class="product-img card-img-top" data-bs-toggle="modal"
+                 data-bs-target="#productModal">
+            <div class="thumbnail-container">
+                <img src="@Url.Action("GetImage", "Dashboard", new { fileName = Model.image })" alt="Thumbnail" class="thumbnail" data-bs-toggle="modal"
+                     data-bs-target="#productModal">
+            </div>
+        </div>
+        <div class="col-md-6 d-flex flex-column product-details">
+            <div>
+                <h1 class="product-title card-title mb-1">@Model.Name</h1>
+                <p class="card-text-description card-text mb-4">
+                    @Model.Description
+                </p>
+            </div>
+            <div class="d-flex align-items-center mb-4">
+                <span class="product-price ">السعر :</span>
+                <span class="card-price">
+                    @Model.Price <span>جنية</span>
+                </span>
+            </div>
+
+            <form asp-action="addmulti" asp-controller="Shop" method="post">
+                <div class="mb-3">
+                    <label for="quantity" class="form-label">الكمية</label>
+                    <div class="quantity-selector">
+                        <input type="number" id="quantity" name="count" value="1" min="1">
+                    </div>
+                </div>
+                <input type="hidden" name="id" value="@Model.Id">
+                <button class="btn btn-success Add-tocart btn-lg rounded text-nowrap w-100" type="submit">
+                    إضافة إلى السلة
+                </button>
+            </form>
+
+            <div class="alert text-center alert-light mt-5" role="alert">
+                <i class="fa-solid fa-truck"></i>
+                التوصيل فى خلال ساعة أو ساعتين
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="@Url.Action("GetImage", "Dashboard", new { fileName = Model.image })" alt="Product" class="img-fluid" id="modalImage">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- More Details-->
+<div class="container mb-3">
+    <h4 class="header-extra mb-4 position-relative">تفاصيل أكتر</h4>
+    <br class="breakLine">
+    <p class="more-details">
+        @Model.Description
+
+    </p>
+</div>
+
+<!-- swiper -->
+@if (pro.Count != 0)
+{
+    <div class="container mt-3">
+        <h4 class="header-extra mb-3 position-relative"> أدوية أخرى </h4>
+        <br class="breakLine">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Product cards -->
+                @foreach (var r in pro)
+                {
+                    <div class="swiper-slide">
+                        <div class="card holding">
+                            <a href="@Url.Action("ProductDetail", "Shop",new{id =r.Id})">
+                                <img src="@Url.Action("GetImage", "Dashboard", new { fileName =  r.image })" class="card-img-top"
+                                     alt="products">
+                            </a>
+                            <div class="card-body">
+                                <h5 class="card-title ">@r.Name</h5>
+                                @* <p class="card-text-description">@r.Description</p> *@
+                                <p class="card-price text-center"><b> @r.Price <span>جنية</span></b></p>
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-success Add-tocart rounded text-nowrap w-100" type="button"
+                                            data-product-id="@r.Id">
+                                        إضافة إلى
+                                        السلة
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+}
+
+
+@section Scripts {
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            loop: false,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 10
+                },
+                480: {
+                    slidesPerView: 2,
+                    spaceBetween: 15
+                },
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20
+                },
+                768: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20
+                }
+            }
+        });
+    </script>
+}

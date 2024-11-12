@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="ar">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="~/favicon.png" type="image/x-icon" />
+    <title>@ViewData["Title"] </title>
+
+    <!-- ========== All CSS files linkup ========= -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Line Icons CDN-->
+    <link rel="stylesheet" href="https://cdn.lineicons.com/4.0/lineicons.css" />
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/maindash.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+          integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- ======== sidebar-nav start =========== -->
+    <aside class="sidebar-nav-wrapper">
+        <div class="navbar-logo">
+            <a asp-controller="Dashboard" asp-action="dashHome">
+                <img src="~/assets/images/logo/Elb-logo.png" style="width: 150px; height: auto;" alt="logo" />
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="nav-item ">
+                    <a asp-controller="Dashboard" asp-action="dashHome" class="nav-link">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M8.74999 18.3333C12.2376 18.3333 15.1364 15.8128 15.7244 12.4941C15.8448 11.8143 15.2737 11.25 14.5833 11.25H9.99999C9.30966 11.25 8.74999 10.6903 8.74999 10V5.41666C8.74999 4.7263 8.18563 4.15512 7.50586 4.27556C4.18711 4.86357 1.66666 7.76243 1.66666 11.25C1.66666 15.162 4.83797 18.3333 8.74999 18.3333Z" />
+                                <path d="M17.0833 10C17.7737 10 18.3432 9.43708 18.2408 8.75433C17.7005 5.14918 14.8508 2.29947 11.2457 1.75912C10.5629 1.6568 10 2.2263 10 2.91665V9.16666C10 9.62691 10.3731 10 10.8333 10H17.0833Z" />
+                            </svg>
+                        </span>
+                        <span class="text"> الرئيسية</span>
+                    </a>
+
+                </li>
+
+                <li class="nav-item ">
+                    <a asp-controller="Dashboard" asp-action="AllProduct" class="nav-link">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M11.8097 1.66667C11.8315 1.66667 11.8533 1.6671 11.875 1.66796V4.16667C11.875 5.43232 12.901 6.45834 14.1667 6.45834H16.6654C16.6663 6.48007 16.6667 6.50186 16.6667 6.5237V16.6667C16.6667 17.5872 15.9205 18.3333 15 18.3333H5.00001C4.07954 18.3333 3.33334 17.5872 3.33334 16.6667V3.33334C3.33334 2.41286 4.07954 1.66667 5.00001 1.66667H11.8097ZM6.66668 7.70834C6.3215 7.70834 6.04168 7.98816 6.04168 8.33334C6.04168 8.67851 6.3215 8.95834 6.66668 8.95834H10C10.3452 8.95834 10.625 8.67851 10.625 8.33334C10.625 7.98816 10.3452 7.70834 10 7.70834H6.66668ZM6.04168 11.6667C6.04168 12.0118 6.3215 12.2917 6.66668 12.2917H13.3333C13.6785 12.2917 13.9583 12.0118 13.9583 11.6667C13.9583 11.3215 13.6785 11.0417 13.3333 11.0417H6.66668C6.3215 11.0417 6.04168 11.3215 6.04168 11.6667ZM6.66668 14.375C6.3215 14.375 6.04168 14.6548 6.04168 15C6.04168 15.3452 6.3215 15.625 6.66668 15.625H13.3333C13.6785 15.625 13.9583 15.3452 13.9583 15C13.9583 14.6548 13.6785 14.375 13.3333 14.375H6.66668Z" />
+                                <path d="M13.125 2.29167L16.0417 5.20834H14.1667C13.5913 5.20834 13.125 4.74197 13.125 4.16667V2.29167Z" />
+                            </svg>
+                        </span>
+                        <span class="text">الأدوية</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a asp-controller="Dashboard" asp-action="AllCategories" class="nav-link">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 3H7C7.55228 3 8 3.44772 8 4V8C8 8.55228 7.55228 9 7 9H3C2.44772 9 2 8.55228 2 8V4C2 3.44772 2.44772 3 3 3Z" />
+                                <path d="M13 3H17C17.5523 3 18 3.44772 18 4V8C18 8.55228 17.5523 9 17 9H13C12.4477 9 12 8.55228 12 8V4C12 3.44772 12.4477 3 13 3Z" />
+                                <path d="M3 11H7C7.55228 11 8 11.4477 8 12V16C8 16.5523 7.55228 17 7 17H3C2.44772 17 2 16.5523 2 16V12C2 11.4477 2.44772 11 3 11Z" />
+                                <path d="M13 11H17C17.5523 11 18 11.4477 18 12V16C18 16.5523 17.5523 17 17 17H13C12.4477 17 12 16.5523 12 16V12C12 11.4477 12.4477 11 13 11Z" />
+                            </svg>
+
+                        </span>
+                        <span class="text">الأقسام</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a asp-controller="Dashboard" asp-action="allOrders">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 4C3 3.44772 3.44772 3 4 3H16C16.5523 3 17 3.44772 17 4C17 4.55228 16.5523 5 16 5H4C3.44772 5 3 4.55228 3 4Z" />
+                                <path d="M3 9C3 8.44772 3.44772 8 4 8H16C16.5523 8 17 8.44772 17 9C17 9.55228 16.5523 10 16 10H4C3.44772 10 3 9.55228 3 9Z" />
+                                <path d="M3 14C3 13.4477 3.44772 13 4 13H16C16.5523 13 17 13.4477 17 14C17 14.5523 16.5523 15 16 15H4C3.44772 15 3 14.5523 3 14Z" />
+                            </svg>
+
+                        </span>
+                        <span class="text">الطلبات</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="Dashboard" asp-action="alloffers">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M17.7071 8.29289L11.7071 2.29289C11.3166 1.90237 10.6834 1.90237 10.2929 2.29289L2.29289 10.2929C1.90237 10.6834 1.90237 11.3166 2.29289 11.7071L8.29289 17.7071C8.68342 18.0976 9.31658 18.0976 9.70711 17.7071L17.7071 9.70711C18.0976 9.31658 18.0976 8.68342 17.7071 8.29289ZM5.5 9C4.67157 9 4 8.32843 4 7.5C4 6.67157 4.67157 6 5.5 6C6.32843 6 7 6.67157 7 7.5C7 8.32843 6.32843 9 5.5 9Z" />
+                            </svg>
+                        </span>
+                        <span class="text">العروض</span>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a asp-controller="UsersDashboard" asp-action="Allusers">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10 10C12.3011 10 14.1667 8.13445 14.1667 5.83333C14.1667 3.53221 12.3011 1.66667 10 1.66667C7.69887 1.66667 5.83334 3.53221 5.83334 5.83333C5.83334 8.13445 7.69887 10 10 10Z" />
+                                <path d="M10 11.6667C7.05975 11.6667 4.16667 12.7417 4.16667 14.5833V16.6667H15.8333V14.5833C15.8333 12.7417 12.9403 11.6667 10 11.6667Z" />
+                            </svg>
+                        </span>
+                        <span class="text">المستخدمين</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a asp-controller="UsersDashboard" asp-action="notification">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M10.8333 2.50008C10.8333 2.03984 10.4602 1.66675 9.99999 1.66675C9.53975 1.66675 9.16666 2.03984 9.16666 2.50008C9.16666 2.96032 9.53975 3.33341 9.99999 3.33341C10.4602 3.33341 10.8333 2.96032 10.8333 2.50008Z" />
+                                <path d="M17.5 5.41673C17.5 7.02756 16.1942 8.33339 14.5833 8.33339C12.9725 8.33339 11.6667 7.02756 11.6667 5.41673C11.6667 3.80589 12.9725 2.50006 14.5833 2.50006C16.1942 2.50006 17.5 3.80589 17.5 5.41673Z" />
+                                <path d="M11.4272 2.69637C10.9734 2.56848 10.4947 2.50006 10 2.50006C7.10054 2.50006 4.75003 4.85057 4.75003 7.75006V9.20873C4.75003 9.72814 4.62082 10.2393 4.37404 10.6963L3.36705 12.5611C2.89938 13.4272 3.26806 14.5081 4.16749 14.9078C7.88074 16.5581 12.1193 16.5581 15.8326 14.9078C16.732 14.5081 17.1007 13.4272 16.633 12.5611L15.626 10.6963C15.43 10.3333 15.3081 9.93606 15.2663 9.52773C15.0441 9.56431 14.8159 9.58339 14.5833 9.58339C12.2822 9.58339 10.4167 7.71791 10.4167 5.41673C10.4167 4.37705 10.7975 3.42631 11.4272 2.69637Z" />
+                                <path d="M7.48901 17.1925C8.10004 17.8918 8.99841 18.3335 10 18.3335C11.0016 18.3335 11.9 17.8918 12.511 17.1925C10.8482 17.4634 9.15183 17.4634 7.48901 17.1925Z" />
+                            </svg>
+                        </span>
+                        <span class="text">الإشعارات</span>
+                    </a>
+                </li>
+
+                <!-- Views/Shared/_DashboardLayout.cshtml -->
+                <li class="nav-item">
+                    <a asp-controller="Dashboard" asp-action="ManageCarousel" class="nav-link">
+                        <span class="icon">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M3 3H7C7.55228 3 8 3.44772 8 4V8C8 8.55228 7.55228 9 7 9H3C2.44772 9 2 8.55228 2 8V4C2 3.44772 2.44772 3 3 3Z" />
+                                <path d="M13 3H17C17.5523 3 18 3.44772 18 4V8C18 8.55228 17.5523 9 17 9H13C12.4477 9 12 8.55228 12 8V4C12 3.44772 12.4477 3 13 3Z" />
+                                <path d="M3 11H7C7.55228 11 8 11.4477 8 12V16C8 16.5523 7.55228 17 7 17H3C2.44772 17 2 16.5523 2 16V12C2 11.4477 2.44772 11 3 11Z" />
+                                <path d="M13 11H17C17.5523 11 18 11.4477 18 12V16C18 16.5523 17.5523 17 17 17H13C12.4477 17 12 16.5523 12 16V12C12 11.4477 12.4477 11 13 11Z" />
+                            </svg>
+                        </span>
+                        <span class="text">Manage Carousel</span>
+                    </a>
+                </li>
+
+                <span class="divider">
+                    <hr />
+                </span>
+            </ul>
+        </nav>
+    </aside>
+    <div class="overlay"></div>
+    <!-- ======== sidebar-nav end =========== -->
+
+    <main class="main-wrapper">
+
+        <!-- ========== header start ========== -->
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-6">
+                        <div class="header-left d-flex align-items-center">
+                            <div class="menu-toggle-btn mr-15">
+                                <button id="menu-toggle" class="main-btn primary-btn btn-hover">
+                                    <i class="lni lni-chevron-left me-2"></i> Menu
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-6">
+                        <div class="header-right d-flex align-items-center">
+                            <!-- Home icon start -->
+                            <div class="home-icon me-5">
+                                <a href="@Url.Action("dashHome", "Dashboard")" class="d-flex align-items-center">
+                                    <i class="lni lni-home" style="font-size: 22px;"></i>
+                                </a>
+                            </div>
+                            <!-- Home icon end -->
+                            <!-- notification start -->
+                            <div class="notification-box ml-15 d-none d-md-flex">
+                                <button class="dropdown-toggle" type="button" id="notification" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                                        <path d="M11 20.1667C9.88317 20.1667 8.88718 19.63 8.23901 18.7917H13.761C13.113 19.63 12.1169 20.1667 11 20.1667Z"
+                                              fill="" />
+                                        <path d="M10.1157 2.74999C10.1157 2.24374 10.5117 1.83333 11 1.83333C11.4883 1.83333 11.8842 2.24374 11.8842 2.74999V2.82604C14.3932 3.26245 16.3051 5.52474 16.3051 8.24999V14.287C16.3051 14.5301 16.3982 14.7633 16.564 14.9352L18.2029 16.6342C18.4814 16.9229 18.2842 17.4167 17.8903 17.4167H4.10961C3.71574 17.4167 3.5185 16.9229 3.797 16.6342L5.43589 14.9352C5.6017 14.7633 5.69485 14.5301 5.69485 14.287V8.24999C5.69485 5.52474 7.60672 3.26245 10.1157 2.82604V2.74999Z"
+                                              fill="" />
+                                    </svg>
+                                    <span></span>
+                                </button>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notification" id="notificationList">
+                                    <!-- الاشعارات -->
+                                </ul>
+
+                            </div>
+                            <!-- notification end -->
+                            <!-- profile start -->
+                            <div class="profile-box ml-15">
+                                <button class="dropdown-toggle bg-transparent border-0" type="button" id="profile"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    <div class="profile-info">
+                                        <div class="info">
+                                            <div class="image">
+                                                <img src="~/assets/images/profile/profileb.png" alt="" />
+                                            </div>
+                                            <div>
+                                                @{
+                                                    PharmacyContext context = new PharmacyContext();
+                                                    int userid;
+                                                    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId");
+                                                    if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+                                                    {
+                                                        userid = userId;
+                                                    }
+                                                    else
+                                                    {
+                                                        userid = 0;
+                                                    }
+
+
+                                                    var user = context.userpermations
+                                                    .Where(c => c.Id == userid).FirstOrDefault();
+
+                                                }
+                                                <h6 class="fw-500">@user.fname </h6>
+                                                <p class="role">Admin</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile" dir="rtl">
+                                    <li>
+                                        <div class="author-info flex items-center !p-1">
+                                            <div class="image">
+                                                <img src="~/assets/images/profile/profile-image.png" alt="image">
+                                            </div>
+                                            <div class="content" style="overflow:auto;">
+                                                <h4 class="text-sm">@user.fname </h4>
+                                                <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
+                                                   href="#">@user.Email</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="divider"></li>
+
+                                    <li>
+                                        <a asp-controller="UsersDashboard" asp-action="notification">
+                                            <i class="lni lni-alarm"></i> الإشعارات
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Dashboard" asp-action="profileSetting"> <i class="lni lni-cog"></i> الإعدادات </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li>
+                                        <a asp-controller="Home" asp-action="Logout"> <i class="lni lni-exit"></i> تسجيل الخروج </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- profile end -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== header end ========== -->
+
+
+        <div class="my-5">
+            @RenderBody()
+        </div>
+
+
+        <!-- ========== footer start =========== -->
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 order-last order-md-first">
+                        <div class="copyright text-center text-md-start">
+                            <p class="text-sm">
+                                Elbaz Pharmacy
+                                
+                            </p>
+                        </div>
+                    </div>
+                    <!-- end col-->
+
+                </div>
+                <!-- end row -->
+            </div>
+            <!-- end container -->
+        </footer>
+        <!-- ========== footer end =========== -->
+
+    </main>
+    <!-- ======== main-wrapper end =========== -->
+    <!-- ======== Preloader =========== -->
+
+    <div id="loader" class="loader-container">
+        <div class="loader"></div>
+    </div>
+
+    <!-- ======== Preloader End =========== -->
+
+
+
+
+    <audio id="notificationSound" src="~/sounds/notification4.mp3" preload="auto"></audio>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/ar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script src="~/assets/js/maindash.js"></script>
+    <script>
+        // moment.locale('ar');
+
+        function playNotificationSound() {
+            var audio = document.getElementById('notificationSound');
+            if (audio) {
+                audio.play();
+            }
+        }
+
+        function checkForNewOrders() {
+            $.ajax({
+                url: '@Url.Action("CheckNewOrders", "Cart")',
+                type: 'GET',
+                success: function (result) {
+                    if (result.hasNewOrder) {
+                        updateNotifications().then(function (hasNewNotifications) {
+                            if (hasNewNotifications) {
+                                playNotificationSound();
+                            }
+                        });
+                    }
+                }
+            });
+        }
+
+        function updateNotifications() {
+            return $.ajax({
+                url: '@Url.Action("GetLatestNotifications", "UsersDashboard")',
+                type: 'GET',
+                success: function (notifications) {
+                    var notificationList = $('#notificationList');
+                    var currentNotifications = notificationList.children().length;
+                    notificationList.empty();
+
+                    notifications.forEach(function (notification) {
+                        var notificationHtml = `
+                                <li>
+                                    <a href="@Url.Action("View_OrderDetails", "UsersDashboard")?id=${notification.orderId}">
+                                         <div class="image">
+                                                  <img src="/assets/images/profile/order-now.png" alt="notification" />
+                                        </div>
+                                            <div class="content">
+                                            <h6>
+                                                ${notification.userName}
+                                                <span class="text-regular">
+                                                    طلب جديد من
+                                                </span>
+                                            </h6>
+                                            <span>${moment(notification.orderTime).fromNow()}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            `;
+                        notificationList.append(notificationHtml);
+                    });
+
+                    return notifications.length > currentNotifications;
+                }
+            });
+        }
+
+        let intervalSet = false;
+
+        $(document).ready(function () {
+            updateNotifications().then(function () {
+                if (!intervalSet) {
+                    intervalSet = true;
+                    setInterval(checkForNewOrders, 3000);
+                }
+            });
+        });
+       
+
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

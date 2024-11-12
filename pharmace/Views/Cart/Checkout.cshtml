@@ -1,0 +1,204 @@
+﻿@model IEnumerable<pharmace.Models.Cart>
+
+@{
+    ViewData["Title"] = "اكمال عملية الشراء";
+    List<int> offersid = ViewBag.offersid;
+
+    PharmacyContext context = new PharmacyContext();
+    int userid;
+    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId");
+    if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+    {
+        userid = userId;
+    }
+    else
+    {
+        userid = 0;
+    }
+
+
+    var user = context.userpermations
+    .Where(c => c.Id == userid).FirstOrDefault();
+}
+
+<!-- Content -->
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <div class="container mt-5">
+
+            <div class="row gap-3">
+                <!-- Form Section -->
+                <div class="col-lg-6 col-md-12 form-container border p-5 rounded-2">
+                    <form asp-action="orderr" asp-controller="Cart">
+                        <div class="row">
+                            <div class="col-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="fname" name="fname"
+                                           placeholder="الاسم الأول" value="@user.fname" required>
+                                    <label for="fname" class="form-floating-label">الاسم الأول</label>
+                                </div>
+                            </div>
+                            <div class="col-6 mb-3">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="sname" name="sname"
+                                           placeholder="الاسم الثانى" value="@user.lname" required>
+                                    <label for="sname" class="form-floating-label">الاسم الثانى</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" value="@user.PhoneNumber" id="custPhone" name="Phone"
+                                           placeholder="رقم الهاتف"
+                                           required
+                                           pattern="01[0-9]{9}"
+                                           maxlength="11"
+                                           title="رقم الهاتف يجب أن يبدأ بـ 01 ويحتوي على 11 رقمًا">
+                                    <label for="custPhone" class="form-floating-label">رقم الهاتف</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <div class="form-floating">
+                                    <textarea class="form-control" value="@user.Address" id="address" rows="3" name="address"
+                                              placeholder="العنوان">@user.Address</textarea>
+                                    <label for="address" class="form-floating-label">العنوان</label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- Summary Section -->
+                <div class="col-lg-5 col-md-12 col-12 border rounded p-4 bg-light">
+                    <div class="ps-0 ps-sm-ps-4 pt-2">
+                        <div class="container">
+
+                            @foreach (var i in Model)
+                            {
+                                @if (offersid.Contains(i.proudectId))
+                                {
+                                    <div class="row my-2 pb-2 m-0 mt-3 position-relative border-bottom">
+                                        <div class="col-2 mt-2">
+                                            <img class="img-fluid rounded" src="@Url.Action("GetImage", "Dashboard", new { fileName =  i.proudect.image })">
+                                            <div class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
+                                                @i.count
+                                            </div>
+                                        </div>
+                                        <div class="col-7 ps-4">
+                                            <p class="mb-0 ">@i.proudect.Name </p>
+                                            <p class="mb-0  offer-text" style="font-size:12px;">عرض</p>
+                                        </div>
+                                        <div class="col-2 mt-3 text-nowrap">
+                                            <p class="mb-0 ">@i.proudect.Price جنية</p>
+                                        </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="row my-2 pb-2 m-0 mt-3 position-relative border-bottom">
+                                        <div class="col-2 mt-2">
+                                            <img class="img-fluid rounded" src="@Url.Action("GetImage", "Dashboard", new { fileName =  i.proudect.image })">
+                                            <div class="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-danger">
+                                                @i.count
+                                            </div>
+                                        </div>
+                                        <div class="col-7 ps-4">
+                                            <p class="mb-0 ">@i.proudect.Name</p>
+                                        </div>
+                                        <div class="col-2 mt-3 text-nowrap">
+                                            <p class="mb-0 ">@i.proudect.Price جنية</p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+
+
+
+                            <hr>
+                            <div class="row mb-1">
+                                <div class="col-6">المجموع الكلى</div>
+                                <div class="col-6 text-end">
+                                    <p class="fw-bold">@ViewBag.Sum جنية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around my-5">
+                            <button class="btn btn-danger" style="width: 150px;" id="confirmOrder">تأكيد</button>
+                            <a asp-controller="Shop" asp-action="ShopHome" class="btn btn-info">شراء دواء اخر</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.getElementById('confirmOrder').addEventListener('click', function (event) {
+        event.preventDefault(); 
+
+        const fname = document.getElementById('fname').value.trim();
+        const sname = document.getElementById('sname').value.trim();
+        const phone = document.getElementById('custPhone').value.trim();
+        const address = document.getElementById('address').value.trim();
+
+
+        if (fname && sname && phone && address) {
+            Swal.fire({
+                title: 'هل تريد اتمام الشراء ؟',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'نعم, قم بالتأكيد!',
+                cancelButtonText: 'إلغاء'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.ajax({
+                        url: '@Url.Action("Orderr", "Cart")', 
+                        type: 'POST',
+                        data: {
+                            fname: fname,
+                            sname: sname,
+                            Phone: phone,
+                            address: address
+                        },
+                        success: function (response) {
+                            Swal.fire(
+                                'تم التأكيد!',
+                                'لقد تم تأكيد طلبك.',
+                                'success'
+                            ).then(() => {
+
+                                window.location.href = '@Url.Action("Succes", "Cart")';
+                            });
+                        },
+                        error: function (xhr, status, error) {
+                            Swal.fire(
+                                'خطأ!',
+                                'حدث خطأ أثناء تأكيد طلبك.',
+                                'error'
+                            );
+                        }
+                    });
+                }
+            });
+        } else {
+            Swal.fire(
+                'خطأ!',
+                'يرجى تعبئة جميع الحقول المطلوبة.',
+                'error'
+            );
+        }
+    });
+
+</script>

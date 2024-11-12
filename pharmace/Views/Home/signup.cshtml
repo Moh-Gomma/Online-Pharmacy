@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "تسجيل حساب جديد";
+}
+
+<section class="container d-flex justify-content-center mt-5">
+    <div class="col-md-7 px-4">
+        <div class="text-center mt-5">
+            <h3 class="text-second mb-4" style="color: #075830; font-weight: 700;">تسجيل حساب جديد</h3>
+        </div>
+
+        <form id="registerForm" class="form-floating" asp-action="CreateNew" asp-controller="Home">
+            <div class="row mt-5 ">
+                <div class="col-6 mb-2">
+                    <div class="form-floating ">
+                        <input type="text" class="form-control" id="firstname" name="fname"
+                               placeholder="الاسم الأول" required title="الاسم الأول يجب أن يحتوي على أحرف فقط.">
+                        <label for="firstname"> الاسم الأول</label>
+                        <div class="invalid-feedback">الاسم الأول غير صحيح</div>
+                    </div>
+                </div>
+                <div class="col-6 mb-2">
+                    <div class="form-floating ">
+                        <input type="text" class="form-control" id="sname"
+                               name="sname" placeholder="الاسم الثانى" required title="الاسم الثاني يجب أن يحتوي على أحرف فقط.">
+                        <label for="sname"> الاسم الثانى</label>
+                        <div class="invalid-feedback">الاسم الثاني غير صحيح</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col text-end">
+                    <div class="form-floating mb-2">
+                        <input type="email" class="form-control" id="custEmail" name="Email"
+                               placeholder="البريد الإلكتروني" required title="الرجاء إدخال بريد إلكتروني صحيح">
+                        <label for="custEmail">عنوان البريد الإلكتروني</label>
+                        <div class="invalid-feedback">البريد الإلكتروني غير صحيح</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col text-end">
+                    <div class="form-floating mb-2">
+                        <input type="password" class="form-control" id="password" name="password"
+                               placeholder="كلمة السر" required title="كلمة السر يجب أن تحتوي على 8 أحرف على الأقل، تشمل حروفًا وأرقامًا.">
+                        <label for="password">كلمة السر</label>
+                        <div class="invalid-feedback">  كلمة السر يجب أن تحتوي على 8 أحرف على الأقل، تشمل حروفًا وأرقامًا و رمزاً</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="passwordConfirm"
+                               name="passwordconfirm" placeholder="تأكيد كلمة السر" required title="تأكيد كلمة السر يجب أن تحتوي على 8 أحرف على الأقل، تشمل حروفًا وأرقامًا.">
+                        <label for="passwordConfirm">تأكيد كلمة السر</label>
+                        <div class="invalid-feedback">تأكيد كلمة السر غير صحيحة</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid gap-3 text-center my-4">
+                <button class="btn btn-success rounded-5 custom-button" type="submit">تسجيل</button>
+            </div>
+        </form>
+
+        <div class="d-grid gap-3 text-center my-4">
+            <p>لديك حساب بالفعل ؟
+                <a asp-action="Create" asp-controller="Home" class="text-second text-decoration-none" style="color: #075830;"> تسجيل الدخول </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Regular expressions for validation
+    const namePattern = /^[\u0600-\u06FFa-zA-Z\s]+$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const passwordPattern =  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@@$!%*?&#])[A-Za-z\d@@$!%*?&#]{8,}$/;
+
+    // Validation function
+    function validateInput(input, pattern) {
+        if (!pattern.test(input.value)) {
+            input.classList.add('is-invalid');
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    }
+
+    // Password confirmation validation
+    function validatePasswordConfirm() {
+        const password = document.getElementById('password');
+        const passwordConfirm = document.getElementById('passwordConfirm');
+        if (password.value !== passwordConfirm.value) {
+            passwordConfirm.classList.add('is-invalid');
+        } else {
+            passwordConfirm.classList.remove('is-invalid');
+        }
+    }
+
+    // Attach blur (change) event listeners for validation when moving to another input
+    document.getElementById('firstname').addEventListener('blur', function() {
+        validateInput(this, namePattern);
+    });
+
+    document.getElementById('sname').addEventListener('blur', function() {
+        validateInput(this, namePattern);
+    });
+
+    document.getElementById('custEmail').addEventListener('blur', function() {
+        validateInput(this, emailPattern);
+    });
+
+    document.getElementById('password').addEventListener('blur', function() {
+        validateInput(this, passwordPattern);
+    });
+
+    document.getElementById('passwordConfirm').addEventListener('blur', function() {
+        validatePasswordConfirm();
+    });
+
+
+    document.getElementById('registerForm').addEventListener('submit', function(event) {
+        let valid = true;
+
+
+        const inputsToValidate = [
+            { input: document.getElementById('firstname'), pattern: namePattern },
+            { input: document.getElementById('sname'), pattern: namePattern },
+            { input: document.getElementById('custEmail'), pattern: emailPattern },
+            { input: document.getElementById('password'), pattern: passwordPattern },
+        ];
+
+        inputsToValidate.forEach(({ input, pattern }) => {
+            if (!pattern.test(input.value)) {
+                input.classList.add('is-invalid');
+                valid = false;
+            } else {
+                input.classList.remove('is-invalid');
+            }
+        });
+
+
+        if (document.getElementById('password').value !== document.getElementById('passwordConfirm').value) {
+            document.getElementById('passwordConfirm').classList.add('is-invalid');
+            valid = false;
+        } else {
+            document.getElementById('passwordConfirm').classList.remove('is-invalid');
+        }
+
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+</script>

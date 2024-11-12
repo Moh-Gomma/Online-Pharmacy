@@ -1,0 +1,83 @@
+﻿@model pharmace.Models.userpermations
+
+@{
+    ViewData["Title"] = "الإعدادات";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+}
+<style>
+
+</style>
+
+<div class="container" dir="rtl">
+
+    <div class="profile-container">
+      
+
+        <div class="profile-content">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h2 class="profile-name">@Model.fname</h2>
+                    <p class="profile-description">قم بتحديث البيانات المطلوبة </p>
+                </div>
+                
+
+            </div>
+
+            <form asp-action="editprofile" asp-controller="Dashboard">
+                <div class="row" dir="rtl">
+                    <div class="col-md-6 mb-3">
+                        <input type="int" class="form-control" name="id" hidden
+                               value="@Model.Id">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="firstName" name="fname" placeholder="الاسم الأول"
+                                   value="@Model.fname">
+                            <label for="firstName">الاسم الأول</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="lastName" name="lname" placeholder="الاسم الثانى"
+                                   value="@Model.lname">
+                            <label for="lastName">الاسم الثانى</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="email" name="Email" placeholder="الايميل" value="@Model.Email">
+                            <label for="email">الايميل</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="phone" placeholder="رقم الهاتف" name="PhoneNumber" value="@Model.PhoneNumber">
+                            <label for="phone">رقم الهاتف</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="address" placeholder="العنوان" name="Address" value="@Model.Address">
+                            <label for="phone">العنوان</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="form-floating">
+                            <input type="password" class="form-control" name="Password" id="password" placeholder="الرقم السرى"
+                                   value="@Model.Password">
+                            <label for="password">الرقم السرى</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-warning btn-save me-2">تأكيد</button>
+                    <button type="button" class="btn btn-dark btn-cancel">الغاء</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

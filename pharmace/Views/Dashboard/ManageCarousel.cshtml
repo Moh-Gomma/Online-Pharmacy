@@ -1,0 +1,54 @@
+﻿<!-- Views/Dashboard/ManageCarousel.cshtml -->
+@model List<CarouselImage>
+@{
+    ViewData["Title"] = "Manage Carousel Images";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<h2>Manage Carousel Images</h2>
+
+<form asp-action="AddCarouselImage" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="image">Upload New Image:</label>
+        <input type="file" name="image" id="image" class="form-control-file" required>
+    </div>
+    <div class="form-group">
+        <label for="link">Link (optional):</label>
+        <input type="text" name="link" id="link" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">Add Image</button>
+</form>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Link</th>
+            <th>Active</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var image in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@Url.Action("GetImage", "Dashboard", new { fileName = image.ImageName })" alt="Carousel Image" style="max-width: 100px;">
+                </td>
+                <td>@image.Link</td>
+                <td>@image.IsActive</td>
+                <td>
+                    <form asp-action="ToggleCarouselImageActive" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="@image.Id">
+                        <button type="submit" class="btn btn-sm btn-@(image.IsActive ? "warning" : "success")">
+                            @(image.IsActive ? "Deactivate" : "Activate")
+                        </button>
+                    </form>
+                    <form asp-action="DeleteCarouselImage" method="post" style="display: inline;">
+                        <input type="hidden" name="id" value="@image.Id">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this image?');">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

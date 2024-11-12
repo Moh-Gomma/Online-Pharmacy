@@ -1,0 +1,166 @@
+﻿@model IEnumerable<pharmace.Models.Proudect>
+
+@{
+    ViewData["Title"] = "الأدوية";
+}
+
+
+
+
+<!--== Start Preloader Content ==-->
+<div class="preloader-wrap">
+    <div class="preloader">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!--== End Preloader Content ==-->
+
+
+
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <!-- Product Section Begin -->
+
+        <section class="product ">
+    <div class="container">
+        <div class="row">
+            <div class="col ">
+                <div class="filter__item">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="filter__sort" style="font-size: 0.875rem;">
+                                <span>ترتيب حسب</span>
+                                <div class="dropdown" style="border: 1px solid rgba(189, 189, 189, 0.884); border-radius: 5px; display: inline-block; direction: rtl;">
+                                    <button id="customDropdownToggle" class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                            style="width: auto; text-align: right; padding: 10px 15px; border: none; background-color: #ffffff; border-radius: 5px;">
+                                        @if (string.IsNullOrEmpty(ViewBag.status as string))
+                                        {
+                                            <div class="d-flex align-items-center">
+                                                افتراضي&nbsp;&nbsp;<span class="ml-1">&#9662;</span>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="d-flex align-items-center">
+                                                @(ViewBag.status == "lowest" ? "اقل سعر" : "اعلى سعر")<span class="ml-1">&#9662;</span>
+                                            </div>
+                                        }
+                                    </button>
+                                    <ul class="dropdown-menu" dir="rtl" style="text-align: right; min-width: auto; border-radius: 5px;">
+                                        <li class="@((ViewBag.status as string) == "" ? "active" : "")">
+                                            <button class="dropdown-item" type="button" onclick="location.href='@Url.Action("showtwo", "Shop", new { catstatus = "" })'"
+                                                    style="text-align: right;">
+                                                افتراضي
+                                            </button>
+                                        </li>
+                                        <li class="@((ViewBag.status as string) == "lowest" ? "active" : "")">
+                                            <button class="dropdown-item" type="button" onclick="location.href='@Url.Action("showtwo", "Shop", new { catstatus = "lowest" })'"
+                                                    style="text-align: right;">
+                                                أقل سعر
+                                            </button>
+                                        </li>
+                                        <li class="@((ViewBag.status as string) == "highest" ? "active" : "")">
+                                            <button class="dropdown-item" type="button" onclick="location.href='@Url.Action("showtwo", "Shop", new { catstatus = "highest" })'"
+                                                    style="text-align: right;">
+                                                أعلى سعر
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Product Card 1 -->
+                    @foreach (var x in Model)
+                    {
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="card holding">
+                                <a href="@Url.Action("ProductDetail", "Shop", new { id = x.Id })">
+                                    <img src="@Url.Action("GetImage", "Dashboard", new { fileName = x.image })" class="card-img-top"
+                                         alt="products">
+                                </a>
+                                <div class="card-body">
+                                    <h5 class="card-title ">@x.Name</h5>
+
+                                    <p class="card-price text-center"><b>@x.Price جنية</b></p>
+
+                                    @if (User.Claims.FirstOrDefault(i => i.Type == "role")?.Value == "admin" || User.Claims.FirstOrDefault(i => i.Type == "role")?.Value == "user")
+                                    {
+                                        <div class="d-flex justify-content-center">
+                                            <button class="btn btn-success Add-tocart rounded text-nowrap w-100" type="button" data-product-id="@x.Id">
+                                                إضافة إلى السلة
+                                            </button>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <a href="@Url.Action("Create", "Home")">
+                                            <div class="d-flex justify-content-center">
+                                                <button class="btn btn-success Add-tocart rounded text-nowrap w-100" type="button" data-product-id="1">
+                                                    إضافة إلى
+                                                    السلة
+                                                </button>
+                                            </div>
+                                        </a>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+</section>
+        <!-- Product Section End -->
+        <nav aria-label="Page navigation example" style="display: flex; align-items: center; justify-content: center;">
+            <ul class="pagination" style="direction: ltr;">
+                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("showtwo", new { page = ViewBag.CurrentPage - 1, status = ViewBag.status})" aria-label="Previous">&laquo;</a>
+                </li>
+
+                @if (ViewBag.TotalPages > 10)
+                {
+                    var startPage = Math.Max(1, ViewBag.CurrentPage - 4);
+                    var endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 5);
+
+                    if (ViewBag.CurrentPage < 6)
+                    {
+                        endPage = 10;
+                    }
+                    else if (ViewBag.CurrentPage > ViewBag.TotalPages - 5)
+                    {
+                        startPage = ViewBag.TotalPages - 9;
+                    }
+
+                    for (int i = startPage; i <= endPage; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("showtwo", new { page = i, status = ViewBag.status })">@i</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("showtwo", new { page = i, status = ViewBag.status})">@i</a>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("showtwo", new { page = ViewBag.CurrentPage + 1,status = ViewBag.status})" aria-label="Next">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</div>

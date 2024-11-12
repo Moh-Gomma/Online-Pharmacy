@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "تم تأكيد البريد الإلكتروني بنجاح";
+}
+
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <div class="container">
+            <div class="d-flex flex-column justify-content-center align-items-center text-center vh-100">
+                <div class="p-5 shadow-lg" style="border-radius: 20px;">
+                    <div class="mb-4">
+                        <i class="fas fa-check-circle text-success" style="font-size: 5rem;"></i>
+                    </div>
+                    <h2 class="text-primary fs-1 mb-3">تم تأكيد البريد الإلكتروني بنجاح</h2>
+                    <p class="text-secondary fs-5 mb-4">
+                        تم تأكيد بريدك الإلكتروني بنجاح. الآن يمكنك تسجيل الدخول إلى حسابك.
+                    </p>
+                    <a href="@Url.Action("Create", "Home")" class="btn btn-success btn-lg">
+                        <i class="fas fa-sign-in-alt me-2"></i> تسجيل الدخول
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

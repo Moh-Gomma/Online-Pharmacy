@@ -1,0 +1,581 @@
+{
+  "Files": [
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\obj\\Release\\net8.0\\win-x86\\scopedcss\\projectbundle\\pharmace.bundle.scp.css",
+      "PackagePath": "staticwebassets\\pharmace.bundle.scp.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\css\\maindash.css",
+      "PackagePath": "staticwebassets\\assets\\css\\maindash.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\css\\morris.css",
+      "PackagePath": "staticwebassets\\assets\\css\\morris.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Alert\\alarm.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Alert\\alarm.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Alert\\cart.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Alert\\cart.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Delete\\delete-icon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Delete\\delete-icon.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Delete\\empty-cart-icon.png",
+      "PackagePath": "staticwebassets\\assets\\images\\Delete\\empty-cart-icon.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Services\\Service1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Services\\Service1.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Services\\aboutback.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Services\\aboutback.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Services\\service2.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Services\\service2.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\Services\\service3.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\Services\\service3.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\banners\\famliycare.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\banners\\famliycare.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\02439_1677741943.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\02439_1677741943.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Centrum-Ola-Roushdy-Category-Banner-1694-x-448_1707044452.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Centrum-Ola-Roushdy-Category-Banner-1694-x-448_1707044452.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Daily-Essential-Waffar-_1690384280.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Daily-Essential-Waffar-_1690384280.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Daily-Essentials_1707299956.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Daily-Essentials_1707299956.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\EG-Now-BiHub-Nivea-July'24-Home-Banner-AR--1-_1721316202.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\EG-Now-BiHub-Nivea-July'24-Home-Banner-AR--1-_1721316202.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2457-1_1679493245.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2457-1_1679493245.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2457-3_1667483217.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2457-3_1667483217.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2457-4_1667482979.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2457-4_1667482979.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2457-6_1667486551.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2457-6_1667486551.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2458-1_1667483491.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2458-1_1667483491.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2458_1667482658.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2458_1667482658.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Frame-2520_1704372631.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Frame-2520_1704372631.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-1_1677742083.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-1_1677742083.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-2_1677742026.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-2_1677742026.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-3_1677741968.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-3_1677741968.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-4_1677742046.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-4_1677742046.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-6_1677742066.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-6_1677742066.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439-7_1677742102.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439-7_1677742102.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Group-2439_1677741984.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Group-2439_1677741984.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Nassacort-AR-male-Cat-Woman_1713705209.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Nassacort-AR-male-Cat-Woman_1713705209.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Sub-category-banner--1-_1721568062.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Sub-category-banner--1-_1721568062.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\Vitamins-Now-_1690384303.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\Vitamins-Now-_1690384303.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\category-banner-AR_1713945344.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\category-banner-AR_1713945344.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\medicine.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\medicine.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\now-medicines_1721211181.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\now-medicines_1721211181.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\resizes_Otrinatural-Ar-1694-X-448-_1713705146.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\resizes_Otrinatural-Ar-1694-X-448-_1713705146.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\resizes_Panadol-Acute-banner-1694-X-448_1710157310.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\resizes_Panadol-Acute-banner-1694-X-448_1710157310.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\telfast-_1715851207.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\telfast-_1715851207.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\beauty-treatment.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\beauty-treatment.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\bedroom.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\bedroom.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\makeup.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\makeup.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\medicine.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\medicine.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\mother.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\mother.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\shampoo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\shampoo.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\supplement.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\supplement.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\category\\v\\wash.png",
+      "PackagePath": "staticwebassets\\assets\\images\\category\\v\\wash.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\features\\blood_Pressure.png",
+      "PackagePath": "staticwebassets\\assets\\images\\features\\blood_Pressure.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\features\\breedcrumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\features\\breedcrumb.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\features\\pharmacist.png",
+      "PackagePath": "staticwebassets\\assets\\images\\features\\pharmacist.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\features\\weight.png",
+      "PackagePath": "staticwebassets\\assets\\images\\features\\weight.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\logo\\Elb-logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\Elb-logo.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\logo\\adds.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\adds.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\logo\\contact.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo\\contact.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\offers\\offer1.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers\\offer1.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\offers\\offersDisc.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers\\offersDisc.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\offers\\orderSuccess.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers\\orderSuccess.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\offers\\reciebe.png",
+      "PackagePath": "staticwebassets\\assets\\images\\offers\\reciebe.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\profile\\order-now.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\order-now.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\profile\\profile-cover.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\profile-cover.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\profile\\profile-image.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\profile-image.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\profile\\profile.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\profile.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\profile\\profileb.png",
+      "PackagePath": "staticwebassets\\assets\\images\\profile\\profileb.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\1.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\1.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\2.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\2.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\4.png",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\4.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\breedcrumb.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\breedcrumb.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\delivery.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\delivery.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\health.gif",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\health.gif"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\images\\slider\\skin.jpg",
+      "PackagePath": "staticwebassets\\assets\\images\\slider\\skin.jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\js\\maindash.js",
+      "PackagePath": "staticwebassets\\assets\\js\\maindash.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\assets\\js\\script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\script.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\sounds\\funn.mp3",
+      "PackagePath": "staticwebassets\\sounds\\funn.mp3"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\sounds\\notification.mp3",
+      "PackagePath": "staticwebassets\\sounds\\notification.mp3"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\sounds\\notification2.mp3",
+      "PackagePath": "staticwebassets\\sounds\\notification2.mp3"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\sounds\\notification4.mp3",
+      "PackagePath": "staticwebassets\\sounds\\notification4.mp3"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\uploads\\ProductImages\\23591c19-98b7-41d0-8ceb-db42f287c7ceالدواء.png",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\23591c19-98b7-41d0-8ceb-db42f287c7ceالدواء.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\uploads\\ProductImages\\34f68108-8def-4cf8-b914-d960bf614ac0دزاء اي ايسيلا سلايس سخي عهعه تتتت ىةسىي هخه .jpg",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\34f68108-8def-4cf8-b914-d960bf614ac0دزاء اي ايسيلا سلايس سخي عهعه تتتت ىةسىي هخه .jpg"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\uploads\\ProductImages\\bc8fe5c6-55cd-4f5a-9b35-9ea86a61494fالفيتامينات.png",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\bc8fe5c6-55cd-4f5a-9b35-9ea86a61494fالفيتامينات.png"
+    },
+    {
+      "Id": "E:\\Last P0\\Last P\\pharmace\\wwwroot\\uploads\\ProductImages\\c6b8af83-eaa1-4742-989c-3f383e6bb66dالدواء.png",
+      "PackagePath": "staticwebassets\\uploads\\ProductImages\\c6b8af83-eaa1-4742-989c-3f383e6bb66dالدواء.png"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.build.pharmace.props",
+      "PackagePath": "build\\pharmace.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.buildMultiTargeting.pharmace.props",
+      "PackagePath": "buildMultiTargeting\\pharmace.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.buildTransitive.pharmace.props",
+      "PackagePath": "buildTransitive\\pharmace.props"
+    },
+    {
+      "Id": "obj\\Release\\net8.0\\win-x86\\staticwebassets\\msbuild.pharmace.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

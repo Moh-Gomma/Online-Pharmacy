@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] </title>
+    <meta charset="UTF-8">
+    <meta name="description" content="صيدلية الباز للمستلزمات الطبية و دلوقتى ممكن تقدر تطلب الدواء و انت فى البيت">
+    <meta name="keywords" content="الأدوية, العلاج, فيتامينات">
+    <meta name="author" content="الباز جروب">
+
+    <link rel="icon" type="image/x-icon" href="~/favicon.png">
+
+    <!-- Link Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/assets/css/style.css" asp-append-version="true">
+    <!-- Link FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" asp-append-version="true">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" asp-append-version="true" />
+    <!-- Link Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+</head>
+<body>
+
+    <!-- Navbar  -->
+    <div class="bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark p-2 container">
+            <a class="navbar-brand p-0" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/assets/images/logo/Elb-logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav mx-auto py-0 pe-4">
+                    <a asp-area="" asp-controller="Home" asp-action="Index" class="nav-item nav-link">الرئيسية</a>
+                    <a asp-area="" asp-controller="Shop" asp-action="showone" class="nav-item nav-link">الدواء</a>
+                    <a asp-area="" asp-controller="Shop" asp-action="showtwo" class="nav-item nav-link">العناية بالشعر</a>
+                    <a asp-area="" asp-controller="Shop" asp-action="showthree" class="nav-item nav-link">العناية بالبشرة</a>
+                    <a asp-area="" asp-controller="Offer" asp-action="offerHome" class="nav-item nav-link blowing-fire-effect">العروض</a>
+
+                    <div class="nav-item dropdown" style="z-index:4000;">
+                        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            المزيد
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="showfour">المكملات الغذائية</a></li>
+                            <li><a class="dropdown-item" asp-area="" asp-controller="Shop" asp-action="showfive">الصحة الجنسية</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                @if (User.Identity.IsAuthenticated)
+                {
+                    var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId");
+                    int userId = userIdClaim != null ? int.Parse(userIdClaim.Value) : 0;
+                    var context = Context.RequestServices.GetService(typeof(PharmacyContext)) as PharmacyContext;
+                    var user = context.userpermations.FirstOrDefault(c => c.Id == userId);
+
+                    <div class="d-flex gap-3">
+                        <div class="dropdown" style="z-index:4000;">
+                            <button class="btn btn-warning py-2 px-4 dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span style="font-size:13px;"> مرحبا , @user.fname </span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" style="font-size:15px;" asp-controller="Home" asp-action="accountinfo">
+                                        <i class="fa-regular fa-user"></i>
+                                        الملف الشخصي
+                                    </a>
+                                </li>
+                                @if (User.Claims.FirstOrDefault(i => i.Type == "role")?.Value == "admin")
+                                {
+                                    <li>
+                                        <a class="dropdown-item" style="font-size:15px;" asp-controller="Dashboard" asp-action="dashHome">
+                                            <i class="fa-regular fa-user"></i>
+                                            لوحه التحكم
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                        <a asp-controller="Home" asp-action="Logout" class="btn btn-danger text-nowrap py-2 px-4">
+                            <i class="fa-solid fa-right-from-bracket fa-flip-horizontal"></i>
+                        </a>
+                    </div>
+                }
+                else
+                {
+                    <a asp-controller="Home" asp-action="Create" class="btn btn-success py-2 px-4">تسجيل الدخول</a>
+
+                }
+            </div>
+        </nav>
+    </div>
+
+    <!-- Sticky Search -->
+    <div class="sticky-top bg-light p-1">
+        <div class="container">
+            <div class="search-bar-container mb-2 mt-2 mx-auto">
+                <div class="d-flex justify-content-around">
+                    <form asp-controller="Shop" asp-action="search" method="get" class="d-flex w-100">
+                        <input type="text" name="query" class="form-control search-input" placeholder="البحث عن الأدوية">
+                        <button type="submit" class="btn ms-2">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+
+                    <div class="market-basket">
+                        <a asp-controller="Cart" asp-action="CartPage"><i class="fa-solid fa-basket-shopping fa-xl"></i></a>
+                        <span id="cart-badge" class="badge badge-pill badge-danger">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NavBar Start End-->
+
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- Scroll Top Button -->
+    <button class="scroll-top tran3s">
+        <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- WhatsApp icon -->
+    <button type="button" class="btn btn-success whatsapp-button" data-bs-toggle="tooltip" data-bs-placement="left" title="تواصل معنا عن طريق الواتساب">
+        <a href="https://wa.me/+201060062211" target="_blank" class="text-white">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </button>
+
+    <!-- Toast Container -->
+    <div aria-live="polite" aria-atomic="true" class="position-relative">
+        <div id="toast-container" class="toast-container position-fixed bottom-0 end-0 p-3">
+        </div>
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer bg-dark mt-6 bottom-0 ">
+        <!-- Widgets -->
+        <div class=" py-3 py-md-3 py-xl-4 border-top border-light-subtle">
+            <div class="container overflow-hidden">
+                <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
+                    <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-0">
+                        <div class="footer-logo-wrapper text-center text-sm-start">
+                            <a asp-controller="Home" asp-action="index">
+                                <img src="~/assets/images/logo/Elb-logo.png" alt="BootstrapBrain Logo" width="175" height="57">
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-xl-6 order-2 order-xl-1">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link link-light px-2 px-md-3" asp-controller="Home" asp-action="About">عن الصيدلية </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-light px-2 px-md-3" asp-controller="Home" asp-action="contantUs">الاتصال</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-xl-3 order-1 order-xl-2">
+                        <div class="social-media-wrapper">
+                            <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-sm-end">
+                                <li class="me-3">
+                                    <a href="https://www.facebook.com" class="link-light link-opacity-75-hover">
+                                        <i class="fa-brands fa-facebook fa-2xl"></i>
+                                    </a>
+                                </li>
+                                <li class="me-3">
+                                    <a href="https://www.instagram.com" class="link-light link-opacity-75-hover">
+                                        <i class="fa-brands fa-instagram fa-2xl"></i>
+                                    </a>
+                                </li>
+                                <li class="me-3">
+                                    <a href="https://x.com/home" class="link-light link-opacity-75-hover">
+                                        <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="bg-dark  py-md-2 ">
+            <div class="container overflow-hidden">
+                <div class="row">
+                    <div class="col">
+                        <div class="footer-copyright-wrapper text-center text-light">
+                            &copy; 2024. All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End of .Footer -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js" integrity="sha512-Ysw1DcK1P+uYLqprEAzNQJP+J4hTx4t/3X2nbVwszao8wD+9afLjBQYjz7Uk4ADP+Er++mJoScI42ueGtQOzEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="~/assets/js/script.js"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            function updateCartBadge() {
+                $.ajax({
+                    url: '@Url.Action("UpdateCartBadge", "Cart")',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#cart-badge').text(data.count);
+                    }
+                });
+            }
+
+            updateCartBadge();
+
+            $('.Add-tocart').click(function () {
+                var productId = $(this).data('product-id');
+                $.ajax({
+                    url: '@Url.Action("max", "Cart")',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function (response) {
+                        if (response.success) {
+                            updateCartBadge();
+                        }
+                    }
+                });
+            });
+
+            $('.remove-from-cart').click(function () {
+                var productId = $(this).data('product-id');
+                $.ajax({
+                    url: '@Url.Action("Delete", "Cart")',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function (response) {
+                        if (response.success) {
+                            updateCartBadge();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Toast-->
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.Add-tocart').on('click', function () {
+                var productId = $(this).data('product-id');
+                $.ajax({
+                    url: '@Url.Action("add", "Home")',
+                    type: 'POST',
+                    data: { id: productId },
+                    success: function (response) {
+                        if (response.success) {
+                            showToast('تمت إضافة المنتج إلى السلة!', 'success');
+                            updateCartBadge();
+                        } else if (response.message === 'Product already in cart') {
+                            showToast('هذا المنتج موجود بالفعل في السلة.', 'info');
+                        }
+                    },
+                    error: function (xhr, status, error) {
+                        showToast('حدث خطأ أثناء إضافة المنتج إلى السلة.', 'danger');
+                    }
+                });
+            });
+
+            // Function to show toast
+            function showToast(message, type) {
+                var toastClass = '';
+
+                switch (type) {
+                    case 'success':
+                        toastClass = 'toast-success';
+                        break;
+                    case 'danger':
+                        toastClass = 'toast-danger';
+                        break;
+                    case 'info':
+                        toastClass = 'toast-info';
+                        break;
+                    case 'warning':
+                        toastClass = 'toast-warning';
+                        break;
+                    default:
+                        toastClass = 'toast-info';
+                        break;
+                }
+
+                var toastHTML = `
+                                    <div class="toast ${toastClass} custom-toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="true">
+                                        <div class="toast-body">
+                                            ${message}
+                                        </div>
+                                    </div>
+                                `;
+
+                $('#toast-container').append(toastHTML);
+                var $toast = $('#toast-container .toast').last();
+                var toast = new bootstrap.Toast($toast);
+                toast.show();
+
+                $toast.on('hidden.bs.toast', function () {
+                    $(this).remove();
+                });
+            }
+
+            function updateCartBadge() {
+                $.ajax({
+                    url: '@Url.Action("UpdateCartBadge", "Cart")',
+                    type: 'GET',
+                    success: function (data) {
+                        $('#cart-badge').text(data.count);
+                    }
+                });
+            }
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

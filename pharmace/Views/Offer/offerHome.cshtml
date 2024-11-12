@@ -1,0 +1,184 @@
+﻿@model IEnumerable<pharmace.Helper.offerDTO>
+
+@{
+    ViewData["Title"] = "العروض";
+    Layout = "~/Views/Shared/_noFooterLayout.cshtml";
+}
+
+<div class="container banner-discount-pg my-5">
+    <img class="img-fluid" src="~/assets/images/offers/offersDisc.png" alt="Discount banner-discount-pg">
+</div>
+
+<div class="container mt-5 border-top">
+    <div class="row mt-5">
+        <!-- اعمل فور لوب من هنا -->
+
+        @foreach (var x in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="card holding">
+                <div class="discount-label">خصم @x.rate%</div>
+                    <a href="@Url.Action("ProductDetail", "Shop", new { id = x.idprodect })">
+                        <img src="@Url.Action("GetImage", "Dashboard", new { fileName = x.image })" class="card-img-top"
+                             alt="products">
+                    </a>
+                <div class="card-body">
+                    <h5 class="card-title">@x.name</h5>
+                    <div class="price-container text-center">
+                        <p class="new-price-op fw-bold">@x.newprice <span>جنية</span></p>
+                        <p class="old-price-op fw-bold">@x.price <span>جنية</span></p>
+                    </div>
+                        @if (User.Claims.FirstOrDefault(i => i.Type == "role")?.Value == "admin" || User.Claims.FirstOrDefault(i => i.Type == "role")?.Value == "user")
+                        {
+                            <div class="d-flex justify-content-center">
+                                <button class="btn btn-success Add-tocart rounded text-nowrap w-100" type="button" data-product-id="@x.idprodect">
+                                    إضافة إلى السلة
+                                </button>
+                            </div>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Create", "Home")">
+                                <div class="d-flex justify-content-center">
+                                    <button class="btn btn-success Add-tocart rounded text-nowrap w-100" type="button" data-product-id="1">
+                                        إضافة إلى
+                                        السلة
+                                    </button>
+                                </div>
+                            </a>
+                        }
+                </div>
+            </div>
+        </div>
+
+        }
+    </div>
+</div>
+
+<nav aria-label="Page navigation example" style="display: flex; align-items: center; justify-content: center;">
+    <ul class="pagination" style="direction: ltr;">
+        <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("offerHome", new { page = ViewBag.CurrentPage - 1 })" aria-label="Previous">&laquo;</a>
+        </li>
+
+        @if (ViewBag.TotalPages > 10)
+        {
+            var startPage = Math.Max(1, ViewBag.CurrentPage - 4);
+            var endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 5);
+
+            if (ViewBag.CurrentPage < 6)
+            {
+                endPage = 10;
+            }
+            else if (ViewBag.CurrentPage > ViewBag.TotalPages - 5)
+            {
+                startPage = ViewBag.TotalPages - 9;
+            }
+
+            for (int i = startPage; i <= endPage; i++)
+            {
+                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("offerHome", new { page = i })">@i</a>
+                </li>
+            }
+        }
+        else
+        {
+            for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("offerHome", new { page = i})">@i</a>
+                </li>
+            }
+        }
+
+        <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+            <a class="page-link" href="@Url.Action("offerHome", new { page = ViewBag.CurrentPage + 1})" aria-label="Next">&raquo;</a>
+        </li>
+    </ul>
+</nav>
+
+<!-- حط هنا عدد الصفحات بردة -->
+
+
+
+<!--== Start Preloader Content ==-->
+<div class="preloader-wrap">
+    <div class="preloader">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</div>
+<!--== End Preloader Content ==-->
+
+<!-- Footer-->
+<footer class="footer bg-dark mt-6 bottom-0 ">
+
+            <!-- Widgets -->
+            <div class=" py-3 py-md-3 py-xl-4 border-top border-light-subtle">
+                <div class="container overflow-hidden">
+                    <div class="row gy-3 gy-md-5 gy-xl-0 align-items-sm-center">
+                        <div class="col-xs-12 col-sm-6 col-xl-3 order-0 order-xl-0">
+                            <div class="footer-logo-wrapper text-center text-sm-start">
+                                <a asp-controller="Home" asp-action="index">
+                                    <img src="~/assets/images/logo/Elb-logo.png" alt="BootstrapBrain Logo" width="175"
+                                         height="57">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-xl-6 order-2 order-xl-1">
+                            <ul class="nav justify-content-center">
+                                <li class="nav-item">
+                                    <a class="nav-link link-light px-2 px-md-3" href="#!">حول</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link link-light px-2 px-md-3" asp-controller="Home" asp-action="contantUs">الاتصال</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-xl-3 order-1 order-xl-2">
+                            <div class="social-media-wrapper">
+                                <ul class="list-unstyled m-0 p-0 d-flex justify-content-center justify-content-sm-end">
+                                    <li class="me-3">
+                                        <a href="#!" class="link-light link-opacity-75-hover">
+                                            <i class="fa-brands fa-facebook fa-2xl"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-3">
+                                        <a href="#!" class="link-light link-opacity-75-hover">
+                                            <i class="fa-brands fa-instagram fa-2xl"></i>
+                                        </a>
+                                    </li>
+                                    <li class="me-3">
+                                        <a href="#!" class="link-light link-opacity-75-hover">
+                                            <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="bg-dark  py-md-2 ">
+                <div class="container overflow-hidden">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer-copyright-wrapper text-center text-light">
+                                &copy; 2024. All Rights Reserved.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+<!-- End of .Footer -->

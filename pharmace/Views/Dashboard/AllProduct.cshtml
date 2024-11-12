@@ -1,0 +1,241 @@
+﻿@model IEnumerable<pharmace.Models.Proudect>
+
+@{
+    ViewData["Title"] = "جميع الأدوية";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+    var modelcat = ViewBag.catall;
+    List<int> offersid = ViewBag.offersid;
+
+}
+
+
+<section class="section">
+    <div class="container-fluid">
+
+        <div class="d-flex justify-content-end">
+            <a asp-controller="Dashboard" asp-action="AddProductBtn" class="btn btn-info my-3">إضافة منتج جديد</a>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-style my-4">
+
+                    <div class="header-search d-md-flex my-3" dir="rtl">
+                        <form asp-action="searchcat" asp-controller="Dashboard" class="d-flex align-items-center">
+                            <input type="text" name="search" placeholder="البحث" value="@ViewBag.query" />
+
+                            <select class="form-select mx-2" aria-label="Filter by Price" name="price">
+                                @if (ViewBag.pricecat == null)
+                                {
+                                    <option value="" disabled selected>السعر</option>
+                                }
+                                else
+                                {
+                                    <option value="@ViewBag.pricecat" disabled selected>@ViewBag.pricecat</option>
+
+                                }
+                                <option value="">الكل</option>
+                                <option value="highest">الأعلى سعراً</option>
+                                <option value="lowest">الأقل سعراً</option>
+                            </select>
+
+                            <select class="form-select mx-2" name="cat" aria-label="Filter by Category">
+                                @if (ViewBag.category == null)
+                                {
+                                    <option value="" disabled selected>الفئة</option>
+                                }
+                                else
+                                {
+                                    <option value="@ViewBag.category" disabled selected>@ViewBag.category</option>
+
+                                }
+                                <option value="">الكل</option>
+
+                                @foreach (var x in modelcat)
+                                {
+                                    <option value="@x.Name">@x.Name</option>
+                                }
+                            </select>
+
+                            <button class="btn btn-outline-secondary border-start-0" type="submit">
+                                <i class="fas fa-filter"></i>
+                            </button>
+
+                        </form>
+                    </div>
+
+                    <div class="table-responsive" dir="rtl">
+                        <table class="table top-selling-table table-hover mx-auto text-center">
+                            <thead>
+                                <tr>
+                                  
+                                    <th>
+                                        <h6 class="text-sm text-medium">الاسم</h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            القسم
+                                        </h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            السعر
+                                        </h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            العدد
+                                        </h6>
+                                    </th>
+                                    <th>
+                                        <h6 class="text-sm text-medium">
+                                            تعديل
+                                        </h6>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        
+
+                                        <td>
+                                            <div class="product">
+                                                <div class="image">
+                                                    <img src="@Url.Action("GetImage", "Dashboard", new { fileName = x.image })" alt="Student Photo" class="img-thumbnail" />
+                                                </div>
+                                                <p class="text-sm text-center"> @x.Name </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-sm text-catetgory">@x.category.Name</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-sm price">@x.Price</p>
+                                        </td>
+                                        <td>
+                                            <span class=" p-2">@x.count</span>
+                                        </td>
+                                        <td>
+                                            <div class="action justify-content-around">
+                                                <a href="@Url.Action("editProduct","Dashboard",new { id = x.Id })">
+                                                    <button class="edit">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </button>
+                                                </a>
+
+                                                    @if(!offersid.Contains(x.Id))
+                                                    {
+                                                        @* //dicount *@
+                                                        <a href="@Url.Action("offer","Dashboard",new { id = x.Id })">
+                                                            <button class="edit">
+                                                                <i class="fa-solid fa-thermometer"></i>
+                                                            </button>
+                                                        </a>
+                                                    }
+                                                
+    
+
+
+                                                <button type="button" class="btn" data-id="@x.Id" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                                    <i class="fa-regular fa-trash-can" style="color: #ba2121;"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                        <!-- End Table -->
+                    </div>
+                </div>
+            </div>
+            <!-- End Col -->
+        </div>
+
+        <nav aria-label="Page navigation example" style="display: flex; align-items: center; justify-content: center;">
+            <ul class="pagination" style="direction: ltr;">
+                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("AllProduct", new { page = ViewBag.CurrentPage - 1, query = ViewBag.query,category=ViewBag.category ,pricecat=ViewBag.pricecat })" aria-label="Previous">&laquo;</a>
+                </li>
+
+                @if (ViewBag.TotalPages > 10)
+                {
+                    var startPage = Math.Max(1, ViewBag.CurrentPage - 4);
+                    var endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 5);
+
+                    if (ViewBag.CurrentPage < 6)
+                    {
+                        endPage = 10;
+                    }
+                    else if (ViewBag.CurrentPage > ViewBag.TotalPages - 5)
+                    {
+                        startPage = ViewBag.TotalPages - 9;
+                    }
+
+                    for (int i = startPage; i <= endPage; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("AllProduct", new { page = i, query = ViewBag.query,category=ViewBag.category ,pricecat=ViewBag.pricecat })">@i</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("AllProduct", new { page = i, query = ViewBag.query,category=ViewBag.category ,pricecat=ViewBag.pricecat})">@i</a>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("AllProduct", new { page = ViewBag.CurrentPage + 1,query = ViewBag.query,category=ViewBag.category ,pricecat=ViewBag.pricecat})" aria-label="Next">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                هل انت متاكد من حذف هذا الصنف ؟
+            </div>
+            <div class="modal-footer" style="justify-content: space-around;">
+                <a id="delete-link" href="#">
+                    <button type="button" class="btn btn-primary submit m-0 p-0 dep rounded-pill" style="width: 100px; height: 50px;">
+                        <label class="mb-0 mx-auto ms-2">نعم</label>
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-danger bg-danger p-0 rounded-pill" data-bs-dismiss="modal" style="width: 100px; height: 50px;">
+                    <label class="mb-0 mx-auto ms-2">لا</label>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var staticBackdrop2 = document.getElementById('staticBackdrop2');
+
+        staticBackdrop2.addEventListener('show.bs.modal', function (event) {
+
+            var button = event.relatedTarget;
+
+            var itemId = button.getAttribute('data-id');
+
+            var deleteLink = document.getElementById('delete-link');
+            deleteLink.href = '/Dashboard/deleteprodect/' + itemId;
+        });
+    });
+</script>

@@ -1,0 +1,235 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = pharmace
+build_property.RootNamespace = pharmace
+build_property.ProjectDir = D:\MEDIA\Last P\pharmace\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\MEDIA\Last P\pharmace
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/MEDIA/Last P/pharmace/Views/Cart/CartPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Cart/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDaGVja291dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Cart/Succes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxTdWNjZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/AddProductBtn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFkZFByb2R1Y3RCdG4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/AllCategories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFsbENhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/alloffers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGFsbG9mZmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/allOrders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGFsbE9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/AllProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEFsbFByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/dashHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGRhc2hIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/editcat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGVkaXRjYXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/editoffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGVkaXRvZmZlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/editProduct.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXGVkaXRQcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/offer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXG9mZmVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Dashboard/profileSetting.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXHByb2ZpbGVTZXR0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/about.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhYm91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/accountinfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxhY2NvdW50aW5mby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/contantUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb250YW50VXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/ForgotPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGb3Jnb3RQYXNzd29yZENvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/ResetPasswordConfirmation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/signup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzaWdudXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/VerificationFailed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZmljYXRpb25GYWlsZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/VerificationSent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZmljYXRpb25TZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Home/VerificationSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWZXJpZmljYXRpb25TdWNjZXNzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Offer/offerHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2ZmZXJcb2ZmZXJIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/_DashboardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoYm9hcmRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/_noFooterLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9ub0Zvb3RlckxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/__LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9fTG9naW5MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/Filtered.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxGaWx0ZXJlZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/ProductDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQcm9kdWN0RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/ProductDetailoffer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxQcm9kdWN0RGV0YWlsb2ZmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzZWFyY2guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/ShopHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxTaG9wSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/showfive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzaG93Zml2ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/showfour.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzaG93Zm91ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/showone.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzaG93b25lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/showthree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzaG93dGhyZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shop/showtwo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxzaG93dHdvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/UsersDashboard/AllUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNEYXNoYm9hcmRcQWxsVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/UsersDashboard/notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNEYXNoYm9hcmRcbm90aWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/UsersDashboard/View_OrderDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNEYXNoYm9hcmRcVmlld19PcmRlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/User/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MEDIA/Last P/pharmace/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b65hpgehmg

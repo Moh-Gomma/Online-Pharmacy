@@ -1,0 +1,249 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\MEDIA\\Last P\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\pharmacycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\pharmacycontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\usersdashboard\\view_orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\usersdashboard\\view_orderdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\usersdashboard\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\usersdashboard\\notification.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\usersdashboard\\allusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\usersdashboard\\allusers.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\shop\\showtwo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\shop\\showtwo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\shop\\showthree.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\shop\\showthree.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\shop\\showone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\shop\\showone.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|e:\\media\\last p\\pharmace\\views\\cart\\succes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEE48602-026F-4BA3-A131-F6D4BCCDB4E0}|pharmace\\pharmace.csproj|solutionrelative:pharmace\\views\\cart\\succes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 425,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Program.cs",
+              "RelativeDocumentMoniker": "pharmace\\Program.cs",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Program.cs",
+              "RelativeToolTip": "pharmace\\Program.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAACcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T17:16:51.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PharmacyContext.cs",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\PharmacyContext.cs",
+              "RelativeDocumentMoniker": "pharmace\\PharmacyContext.cs",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\PharmacyContext.cs",
+              "RelativeToolTip": "pharmace\\PharmacyContext.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACEAAACEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T17:16:14.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\appsettings.json",
+              "RelativeDocumentMoniker": "pharmace\\appsettings.json",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\appsettings.json",
+              "RelativeToolTip": "pharmace\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-12T17:15:44.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\_ViewStart.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:42.015Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\_ViewImports.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:40.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "notification.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\notification.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\UsersDashboard\\notification.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\notification.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\UsersDashboard\\notification.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:28.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AllUsers.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\AllUsers.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\UsersDashboard\\AllUsers.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\AllUsers.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\UsersDashboard\\AllUsers.cshtml",
+              "ViewState": "AgIAABABAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:18.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\User\\Create.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\User\\Create.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\User\\Create.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\User\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:15.729Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "showtwo.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showtwo.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\Shop\\showtwo.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showtwo.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\Shop\\showtwo.cshtml",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAAAFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:05.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "showthree.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showthree.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\Shop\\showthree.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showthree.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\Shop\\showthree.cshtml",
+              "ViewState": "AgIAAKYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:15:01.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "View_OrderDetails.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\View_OrderDetails.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\UsersDashboard\\View_OrderDetails.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\UsersDashboard\\View_OrderDetails.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\UsersDashboard\\View_OrderDetails.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAIMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-09-28T20:31:55.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "showone.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showone.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\Shop\\showone.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\Shop\\showone.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\Shop\\showone.cshtml",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAAAGEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:14:38.779Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Succes.cshtml",
+              "DocumentMoniker": "E:\\MEDIA\\Last P\\pharmace\\Views\\Cart\\Succes.cshtml",
+              "RelativeDocumentMoniker": "pharmace\\Views\\Cart\\Succes.cshtml",
+              "ToolTip": "E:\\MEDIA\\Last P\\pharmace\\Views\\Cart\\Succes.cshtml",
+              "RelativeToolTip": "pharmace\\Views\\Cart\\Succes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-12T17:09:34.368Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

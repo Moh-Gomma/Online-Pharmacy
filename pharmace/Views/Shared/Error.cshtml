@@ -1,0 +1,38 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "خطأ";
+}
+
+<style>
+    #error {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    #error h1 {
+        font-size: 90px;
+    }
+</style>
+
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <div id="error" class="text-center">
+            <h1 class="mt-5">404 Not Found</h1>
+            <h5 class="mt-5 mb-5">هذا المحتوى غير موجود</h5>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-danger px-5 py-3">العودة الى الصفحة الرئيسية</a>
+        </div>
+    </div>
+</div>
+
+
+@if (Model.ShowRequestId)
+{
+    <p>
+        <strong>Request ID:</strong> <code>@Model.RequestId</code>
+    </p>
+}
+
+

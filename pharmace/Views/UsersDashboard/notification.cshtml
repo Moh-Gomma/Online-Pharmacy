@@ -1,0 +1,36 @@
+@model IEnumerable<pharmace.Models.Orders>
+@{
+    ViewData["Title"] = "الاشعارات ";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    // Helper function to format the time difference
+    string GetTimeDifference(DateTime orderTime)
+    {
+        var timeSpan = DateTime.Now - orderTime;
+        if (timeSpan.TotalDays >= 1)
+            return $"{(int)timeSpan.TotalDays} يوم{(timeSpan.TotalDays > 1 ? "" : "")} ";
+        if (timeSpan.TotalHours >= 1)
+            return $"{(int)timeSpan.TotalHours} ساعة{(timeSpan.TotalHours > 1 ? "" : "")} ";
+        if (timeSpan.TotalMinutes >= 1)
+            return $"{(int)timeSpan.TotalMinutes} دقيقة{(timeSpan.TotalMinutes > 1 ? "" : "")} ";
+        return "الآن";
+    }
+}
+
+<div class="container my-5" dir="rtl">
+    @foreach (var c in Model)
+    {
+        <div class="alert alert-light d-flex justify-content-between align-items-center" role="alert">
+            <div class="d-flex align-items-center">
+                <p class="mb-0">طلب جديد من </p>
+                <p class="text-primary-emphasis customername mb-0 mx-2">@(c.fname + " " + c.sname) </p>
+            </div>
+            <p class="date mb-0 text-muted mx-2 timeordered">قبل @GetTimeDifference(c.Date) - @c.Date </p>
+            <p class="mb-0">
+                <a href="@Url.Action("View_OrderDetails", "UsersDashboard", new { id = c.Id })" class="text-info">
+                    عرض التفاصيل
+                </a>
+            </p>
+        </div>
+    }
+</div>

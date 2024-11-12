@@ -1,0 +1,88 @@
+﻿@using pharmace.Models
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+}
+@model userpermations
+
+<section class="container d-flex justify-content-center mt-5">
+    <div class="col-md-7 px-4">
+        <div class="text-center mt-5">
+            <h3 class="text-second mb-4" style="color: #075830; font-weight: 700;">تسجيل الدخول</h3>
+        </div>
+
+        <form id="loginForm" class="form-floating" asp-controller="Home" asp-action="Login" method="post">
+            <div class="row mt-5">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Email" type="email" class="form-control" id="custEmail" name="Email" placeholder="البريد الإلكتروني" required>
+                        <label for="custEmail">عنوان البريد الإلكتروني</label>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div id="errorMessagee" class="text-danger text-center my-3"></div>
+
+                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="col">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Password" type="password" class="form-control" id="password" name="password" placeholder="كلمة السر" required>
+                        <label for="password">كلمة السر</label>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div id="errorMessage" class="text-danger text-center my-3"></div>
+
+                </div>
+            </div>
+
+            <div class="my-3">
+                <label class="form-check-label" for="exampleCheck1">تذكر تسجيل الدخول</label>
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            </div>
+
+            <div class="d-grid gap-3 text-center my-4">
+                <button class="btn btn-success rounded-5 custom-button" type="submit">تسجيل الدخول</button>
+            </div>
+        </form>
+
+
+        <div class="d-grid gap-3 text-center my-4">
+            <p>لا يوجد لديك حساب؟ <a asp-controller="Home" asp-action="signup" class="text-second text-decoration-none" style="color: #075830;">انشئ حسابك الآن</a></p>
+            <p>هل نسيت كلمة المرور؟ <a asp-controller="Home" asp-action="ForgotPassword" class="text-second text-decoration-none" style="color: #075830;">استعادة كلمة المرور</a></p>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#loginForm').submit(function (event) {
+            event.preventDefault();
+
+            var formData = $(this).serialize();
+
+            $.ajax({
+                url: '@Url.Action("Login", "Home")',
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    if (response.success) {
+                        window.location.href = '/Home/Index';
+                    } else {
+                        if (response.message == "البريد الإلكتروني غير صحيحة.") {
+                            $('#errorMessagee').text(response.message);
+
+                        } else {
+                            $('#errorMessage').text(response.message);
+
+                        }
+                    }
+                },
+                error: function (response) {
+                    $('#errorMessage').text("حدث خطأ أثناء تسجيل الدخول. الرجاء المحاولة مرة أخرى.");
+                }
+            });
+        });
+    });
+</script>

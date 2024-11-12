@@ -1,0 +1,285 @@
+﻿@model pharmace.Models.userpermations
+@{
+    ViewData["Title"] = "الملف الشخصى";
+    List<Orders?> myorder = ViewBag.myorder ?? new List<Orders>();
+    List<List<pharmace.Helper.orderDTO>> ordersDTO = ViewBag.ordersDTO;
+
+}
+
+<style>
+
+
+    .mb-3 {
+        margin-bottom: 1rem;
+    }
+
+</style>
+
+
+
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <!-- breedcrumb start -->
+        <section class="breadcrumb-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="breadcrumb__text">
+                            <h2>الملف الشخصى</h2>
+                            <div class="breadcrumb__option">
+                                <a asp-controller="Home" asp-action="index">الرئيسية</a>
+                                <span>الملف الشخصى</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- COntent of Profile -->
+        <div class="container mt-5">
+
+
+            <div class="section mb-4">
+                <div class="section-header-info" onclick="toggleSection('ordersssssss')">
+                    <h2 class="m-0">سجل الطلبات </h2>
+                </div>
+                <div id="ordersssssss" class="section-content">
+                    @if (myorder.Count != 0 && myorder != null)
+                    {
+                        @* @foreach (var o in myorder) *@
+                        @for (int i = 0; i < myorder.Count; i++)
+                        {
+                            <div class="order-item mb-4">
+                                <h3>
+                                    <a class="d-block text-dark" data-bs-toggle="collapse" href="#orderDetails-@myorder[i].Id" role="button" aria-expanded="false" aria-controls="orderDetails-@myorder[i].Id">
+                                        رقم الطلب: ( @myorder[i].Id )
+                                        <i class="fa-solid fa-hashtag"></i>
+                                        <i class="fa-solid fa-clock"></i>
+                                        @myorder[i].Date
+                                    </a>
+                                </h3>
+                                <div class="collapse" id="orderDetails-@myorder[i].Id">
+                                    <div class="row mt-3">
+
+
+
+                                        @foreach (var c in ordersDTO[i])
+                                        {
+                                            <div class="col-md-6 mb-3">
+                                                <div class="order-product-item d-flex">
+                                                    <div class="Ordered-product-image-container">
+                                                        <img src="@Url.Action("GetImage", "Dashboard", new { fileName =  c.image })" alt="@c.name" class="Ordered-product-image">
+                                                        <span class="badge ordered-badge bg-primary Order-product-count">@c.count</span>
+                                                    </div>
+                                                    <div class="Order-Product-Detals mr-3">
+                                                        <h4 class="text-truncate text-wrap" style="max-width: 200px;">@c.name</h4>
+                                                        <div class="Order-Product-Details-Row">
+                                                            <div>
+                                                                <p>
+                                                                    السعر:
+                                                                    <span>@c.price</span> جنية
+                                                                </p>
+
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+                                        <div class="row ">
+                                            <p class="py-4 bg-body-secondary">العنوان: @myorder[i].address</p>
+                                            <p class="py-4 bg-body-secondary">
+                                                الإجمالي:
+                                                <span>@myorder[i].Totalprice</span> جنية
+                                            </p>
+                                            <p class="text-center border-bottom pb-3">
+                                                الحالة:
+                                                @if (@myorder[i].states == true)
+                                                {
+                                                    <span class="badge bg-info text-white">تمت الموافقة</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-danger text-white">فى قائمة الانتظار</span>
+                                                }
+                                            </p>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+                    else
+                    {
+                        <div class="no-orders-message text-center">
+                            لا يوجد طلبات
+                        </div>
+                    }
+                </div>
+
+            </div>
+
+
+
+            <h2 class="mb-4">الملف الشخصي</h2>
+            <div class="row">
+                <!-- Navigation Column -->
+                <div class="col-md-4 mb-4">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link active" id="v-pills-account-tab" data-bs-toggle="pill"
+                                data-bs-target="#v-pills-account" type="button" role="tab" aria-controls="v-pills-account"
+                                aria-selected="true">
+                            إعدادات الحساب
+                        </button>
+
+                        <button class="nav-link" id="v-pills-password-tab" data-bs-toggle="pill" data-bs-target="#v-pills-password"
+                                type="button" role="tab" aria-controls="v-pills-password" aria-selected="false">
+                            تغيير كلمة المرور
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Content Column -->
+                <div class="col-md-8">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <!-- Account Settings -->
+                        <div class="tab-pane show active" id="v-pills-account" role="tabpanel"
+                             aria-labelledby="v-pills-account-tab">
+                            <h4 class="mb-4">إعدادات الحساب</h4>
+                            <form asp-action="Edit" asp-controller="Home" id="accountForm" method="post">
+                                <input type="number" hidden class="form-control" name="id" id="id" value="@Model.Id">
+
+                                <div class="mb-3">
+                                    <label for="firstName" class="form-label fw-bold">الاسم الأول</label>
+                                    <input type="text" class="form-control" name="firstName" id="firstName" value="@Model.fname" required pattern="[A-Za-zأ-ي]{1,50}" title="الاسم الأول يجب أن يحتوي على أحرف فقط ويكون أقل من 50 حرفاً">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="lastName" class="form-label fw-bold">اسم العائلة</label>
+                                    <input type="text" class="form-control" name="lastName" id="lastName" value="@Model.lname" required pattern="[A-Za-zأ-ي]{1,50}" title="اسم العائلة يجب أن يحتوي على أحرف فقط ويكون أقل من 50 حرفاً">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label fw-bold">البريد الإلكتروني</label>
+                                    <input type="email" class="form-control" name="email" id="email" value="@Model.Email" 
+                                           required
+                                           pattern="[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                           title="يرجى إدخال بريد إلكتروني صالح مثل example@example.com">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label fw-bold">رقم الهاتف</label>
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                           value="@Model.PhoneNumber"
+                                           pattern="01[0-9]{9}"
+                                           maxlength="11"
+                                           title="رقم الهاتف يجب أن يبدأ بـ 01 ويحتوي على 11 رقمًا"
+                                           required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address" class="form-label fw-bold">العنوان</label>
+                                    <textarea class="form-control" id="address" name="address" rows="3" required>@Model.Address</textarea>
+                                </div>
+                                <button type="submit" class="btn btn-success">حفظ التغييرات</button>
+                            </form>
+
+                        </div>
+
+
+                        <!-- Reset Password -->
+                        <div class="tab-pane" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+                            <h4 class="mb-4">تغيير كلمة المرور</h4>
+                            <form asp-action="EditPassword" asp-controller="Home">
+                                <div class="mb-3">
+                                    <label for="currentPassword" class="form-label">كلمة المرور الحالية</label>
+                                    <input type="password" class="form-control" name="currentPassword" id="currentPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPassword" class="form-label">كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" name="newPassword" id="newPassword"
+                                           required
+                                           minlength="8"
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                           title="كلمة المرور يجب أن تكون على الأقل 8 أحرف وتتضمن حرفاً كبيراً، حرفاً صغيراً ورقماً">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">تأكيد كلمة المرور الجديدة</label>
+                                    <input type="password" class="form-control" name="confirmPassword" id="confirmPassword"
+                                           required
+                                           minlength="8"
+                                           pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                           title="كلمة المرور يجب أن تكون على الأقل 8 أحرف وتتضمن حرفاً كبيراً، حرفاً صغيراً ورقماً">
+                                </div>
+                                <button type="submit" class="btn btn-success">تغيير كلمة المرور</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div id="alertContainer" style="position: fixed; top: 20px; right: 20px; z-index: 9999;"></div>
+
+
+
+
+@section Scripts {
+
+    @if (TempData["Message"] != null)
+    {
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                Swal.fire({
+                    title: 'تم تحديث المعلومات بنجاح',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            });
+        </script>
+
+    }
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var alertMessage = '@TempData["AlertMessage"]';
+            var alertType = '@TempData["AlertType"]';
+
+            if (alertMessage) {
+                showAlert(alertMessage, alertType);
+            }
+        });
+
+        function showAlert(message, type) {
+            var alertHtml = '<div class="alert alert-' + type + ' alert-dismissible fade show" role="alert">' +
+                message +
+                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' +
+                '</div>';
+
+            $('#alertContainer').html(alertHtml);
+
+            // Auto-close after 4 seconds
+            setTimeout(function () {
+                $('.alert').alert('close');
+            }, 4000);
+        }
+
+
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+
+
+}

@@ -1,0 +1,161 @@
+﻿@model IEnumerable<pharmace.Models.orderprodect>
+
+@{
+    ViewData["Title"] = "تفاصيل الطلب";
+
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+    userpermations user = ViewBag.user;
+
+    Orders orders = ViewBag.order;
+}
+<style>
+
+</style>
+<div class="container my-5" dir="rtl">
+    <div class="customer-info">
+        <h4 class="mb-3 text-primary">معلومات العميل</h4>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label class="form-label">الاسم الكامل</label>
+                <p class="form-control">@(orders.fname + " " + orders.sname)</p>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label class="form-label">رقم الهاتف</label>
+                <p class="form-control">@orders.phone</p>
+            </div>
+
+            <div class="col-12">
+                <label class="form-label">العنوان</label>
+                <p class="form-control">@orders.address</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="order-summary">
+        <h4 class="mb-3 text-primary">المنتجات المطلوبة</h4>
+
+        @foreach (var c in Model)
+
+        {
+            <div class="order-product-dash-details mb-4">
+                <div class="row g-2">
+                    <div class="col-3 col-md-2">
+                        <img src="@Url.Action("GetImage", "Dashboard", new { fileName = c.proudect.image })" alt="Product Image" class="product-img-orderdetails img-fluid" />
+                    </div>
+
+                    <div class="col-9 col-md-10">
+                        <div class="info">
+                            <h5 class="mb-1">@c.proudect.Name</h5>
+                            <p class="text-muted text-truncate text-wrap mb-2">@c.proudect.Description</p>
+                            <p class="order-product-price mb-0 text-success-emphasis">السعر: @c.proudect.Price</p>
+                            <p class="order-product-quantity mb-0">الكمية: @c.count</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <hr>
+
+        <div class="d-flex flex-column flex-md-row gap-2 align-items-center">
+            <h4 class="text-primary">المجموع الكلي:</h4>
+            <h4 class="total-price text-success-emphasis"> @ViewBag.sum جنية</h4>
+        </div>
+        <hr>
+
+        <div class="order-actions mt-4">
+            <h4 class="mb-3 text-primary">إجراءات الطلب</h4>
+            <div class="d-flex gap-3">
+                @{
+                    if (orders.states == true)
+
+                    {
+                        <button class="btn btn-success btn-sm text-nowrap" id="acceptedButton" disabled style="display: block;">
+                            <i class="fas fa-check"></i> تمت الموافقة
+                        </button>
+                    }
+
+                    else
+
+                    {
+                        <a href="#" id="acceptButton" data-order-id="@orders.Id">
+                            <button class="btn btn-info btn-sm text-nowrap">
+                                الموافقة ؟
+                            </button>
+                        </a>
+                        <button class="btn btn-success btn-sm text-nowrap" id="acceptedButton" disabled style="display: none;">
+                            <i class="fas fa-check"></i> تمت الموافقة
+                        </button>
+                    }
+                }
+
+                @{
+                    if (orders.states != true)
+
+                    {
+                        <a href="#" id="refuseButton" data-order-id="@orders.Id">
+                            <button class="btn btn-danger btn-sm text-nowrap">
+                                رفض الطلب
+                            </button>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        $(document).ready(function () {
+            $('#acceptButton').click(function (e) {
+                e.preventDefault();
+                var orderId = $(this).data('order-id');
+                Swal.fire({
+                    title: 'هل أنت متأكد من الموافقة على هذا الطلب؟',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'نعم',
+                    cancelButtonText: 'لا',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        $.ajax({
+                            url: '@Url.Action("states", "Dashboard")',
+                            type: 'GET',
+                            data: { id: orderId },
+                            success: function () {
+
+                                window.location.href = '@Url.Action("allOrders", "Dashboard")';
+                            },
+                            error: function () {
+                                Swal.fire('حدث خطأ أثناء الاتصال بالخادم', '', 'error');
+                            }
+                        });
+                    }
+                });
+            });
+
+            $('#refuseButton').click(function (e) {
+                e.preventDefault();
+                var orderId = $(this).data('order-id');
+                Swal.fire({
+                    title: 'هل أنت متأكد من رفض هذا الطلب؟',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'نعم',
+                    cancelButtonText: 'لا',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = '@Url.Action("refeuse", "Dashboard")/' + orderId;
+                    }
+                });
+            });
+        });
+
+
+    </script>
+}

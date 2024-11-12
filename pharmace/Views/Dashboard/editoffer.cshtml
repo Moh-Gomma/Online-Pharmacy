@@ -1,0 +1,49 @@
+﻿@model pharmace.Models.Offer
+
+@{
+    ViewData["Title"] = "تعديل";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+<section class="section">
+    <div class="container-fluid">
+        <form asp-action="editoffer" asp-controller="Dashboard" class="border p-4 my-4 bg-light shadow rounded" dir="rtl">
+            <input type="number" hidden class="form-control" id="nameofproduct" value="@Model.Id" placeholder="الاسم"
+                   aria-label="name of product" name="id" required>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="Quantityof" class="form-label">النسبه</label>
+                    <input type="number" class="form-control" id="Quantityof" value="@Model.presentage" placeholder="النسبه"
+                           aria-label="quantity of product" name="rate" required>
+                </div>
+            </div>
+            <div class="d-flex justify-content-start gap-3 py-4">
+                <button type="submit" class="btn btn-primary text-nowrap" style="width: 100px;">تأكيد</button>
+                <button type="reset" class="btn btn-danger text-nowrap" style="width: 100px;">إلغاء</button>
+            </div>
+
+
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        function displaySelectedImage(event, elementId) {
+            const selectedImage = document.getElementById(elementId);
+            const fileInput = event.target;
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    selectedImage.src = e.target.result;
+                };
+
+                reader.readAsDataURL(fileInput.files[0]);
+            }
+        }
+    </script>
+
+}
+}

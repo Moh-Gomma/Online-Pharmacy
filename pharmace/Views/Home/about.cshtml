@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "عن الصيدلية";
+}
+
+
+    <style>
+        .hero-section {
+            background: url('/assets/images/services/aboutback.jpg') no-repeat center center;
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .hero-section h1 {
+            z-index: 1;
+            font-size: 48px;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .hero-section p {
+            z-index: 1;
+            font-size: 24px;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        @@keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .about-section {
+            padding: 60px 20px;
+        }
+        .about-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .about-section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .about-section .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .about-section .card:hover {
+            transform: translateY(-10px);
+        }
+    </style>
+
+    <div class="hero-section">
+        <h1 class="mx-3 ms-3">مرحبًا بكم في صيدلية الباز</h1>
+        <p>مستلزمات طبية وأدوية بأعلى جودة</p>
+    </div>
+
+    <div class="container about-section">
+        <h2>عن صيدلية الباز</h2>
+        <p>
+            نحن في صيدلية الباز ملتزمون بتقديم أفضل الخدمات الصحية والطبية لعملائنا.
+            نسعى دائمًا لتوفير مجموعة واسعة من الأدوية والمستلزمات الطبية ذات الجودة العالية.
+            نهدف إلى أن نكون شريككم الموثوق في الرعاية الصحية من خلال تقديم النصائح الطبية الموثوقة والخدمات المتميزة.
+        </p>
+
+        <div class="row mt-5">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="~/assets/images/services/Service1.jpg" class="card-img-top" alt="Service 1">
+                    <div class="card-body">
+                        <h5 class="card-title">خدماتنا الطبية</h5>
+                        <p class="card-text">نوفر مجموعة واسعة من الخدمات الطبية، بما في ذلك الاستشارات الطبية وتوفير الأدوية والمستلزمات الطبية.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="~/assets/images/services/service2.jpg" class="card-img-top" alt="Service 2">
+                    <div class="card-body">
+                        <h5 class="card-title">الجودة والثقة</h5>
+                        <p class="card-text">نحن ملتزمون بتوفير منتجات ذات جودة عالية وبأسعار تنافسية لضمان رضا عملائنا وثقتهم.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                <img src="~/assets/images/services/service3.jpg" class="card-img-top" alt="Service 3">
+                    <div class="card-body">
+                        <h5 class="card-title">الراحة والسهولة</h5>
+                        <p class="card-text">يمكنكم الآن طلب الأدوية والمستلزمات الطبية عبر موقعنا الإلكتروني وتوصيلها إلى باب منزلكم بكل سهولة وأمان.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

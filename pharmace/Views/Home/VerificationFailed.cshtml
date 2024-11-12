@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Token Expired";
+}
+
+
+<div class="d-flex flex-column min-vh-100">
+    <div class="flex-grow-1">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="alert alert-danger text-center">
+                        <h4 class="alert-heading">رابط منتهي الصلاحية</h4>
+                        <p>عذرًا، هذا الرابط منتهي الصلاحية. يرجى طلب رابط جديد.</p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <a href="@Url.Action("ForgotPassword", "Home")" class="btn btn-primary">استعادة كلمة المرور</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

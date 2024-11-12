@@ -1,0 +1,195 @@
+﻿@model IEnumerable<pharmace.Models.Proudect>
+@{
+    ViewData["Title"] = "الصفحة الرئيسية";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+
+}
+
+<section class="section">
+    <div class="container-fluid">
+        <!-- ========== title-wrapper start ========== -->
+        <div class="title-wrapper pt-30">
+            <div class="row align-items-center">
+                <div class="col-md-12" dir="rtl">
+                    <div class="title">
+                        <h2>مرحبا @ViewBag.User.fname , كيف حالك اليوم ؟</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ========== title-wrapper end ========== -->
+        <div class="row">
+            <div class="col-xl-3 col-lg-4 col-sm-6 my-4">
+                <div class="icon-card mb-30">
+                    <div class="icon purple">
+                        <i class="lni lni-cart-full"></i>
+                    </div>
+                    <div class="content text-nowrap">
+                        <h6 class="mb-10">عدد الطلبات</h6>
+                        <h3 class="text-bold mb-10">@ViewBag.numberorder</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6 my-4">
+                <div class="icon-card mb-30">
+                    <div class="icon success">
+                        <i class="lni lni-dollar"></i>
+                    </div>
+                    <div class="content text-nowrap">
+                        <h6 class="mb-10">عدد العروض</h6>
+                        <h3 class="text-bold mb-10"> @ViewBag.offer</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6 my-4">
+                <div class="icon-card mb-30">
+                    <div class="icon primary">
+                        <i class="lni lni-credit-cards"></i>
+                    </div>
+                    <div class="content text-nowrap">
+                        <h6 class="mb-10">عدد الاقسام</h6>
+                        <h3 class="text-bold mb-10">@ViewBag.catnumber</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-4 col-sm-6 my-4">
+                <div class="icon-card mb-30">
+                    <div class="icon orange">
+                        <i class="lni lni-user"></i>
+                    </div>
+                    <div class="content text-nowrap">
+                        <h6 class="mb-10">عدد المستخدمين</h6>
+                        <h3 class="text-bold mb-10">@ViewBag.numberuser</h3>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- End Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card-style mb-30">
+                    <div class="title d-flex flex-wrap align-items-center justify-content-end">
+                        <div class="right">
+                            <h6 class="text-medium mb-4"> المضاف حديثا </h6>
+                        </div>
+
+                    </div>
+
+                    <div class="table-responsive" dir="rtl">
+                        <table class="table top-selling-table mx-auto text-center">
+                            <thead>
+                                <tr class="">
+                                    <th>
+                                        <h6 class="text-sm text-medium">الصنف</h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            القسم <i class="lni lni-arrows-vertical"></i>
+                                        </h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            السعر <i class="lni lni-arrows-vertical"></i>
+                                        </h6>
+                                    </th>
+                                    <th class="min-width">
+                                        <h6 class="text-sm text-medium">
+                                            العدد <i class="lni lni-arrows-vertical"></i>
+                                        </h6>
+                                    </th>
+                                    <th>
+                                        <h6 class="text-sm text-medium">
+                                            حذف <i class="lni lni-arrows-vertical"></i>
+                                        </h6>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var x in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            <div class="product">
+                                                <div class="image">
+                                                    <img src="@Url.Action("GetImage", "Dashboard", new { fileName = x.image })" alt="Student Photo" class="img-thumbnail" />
+                                                </div>
+                                                <p class="text-sm text-center"> @x.Name </p>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <p class="text-sm text-catetgory">@x.category.Name</p>
+                                        </td>
+                                        <td>
+                                            <p class="text-sm price">@x.Price جنية</p>
+                                        </td>
+                                        <td>
+                                            <span class="status-btn close-btn">@x.count</span>
+                                        </td>
+                                        <td>
+                                            <div class="action justify-content-around">
+                                               
+                                                <button type="button" class="btn" data-id="@x.Id" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                                    <i class="fa-regular fa-trash-can" style="color: #ba2121;"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                هل انت متاكد من حذف هذا الصنف  ؟
+            </div>
+            <div class="modal-footer" style="justify-content: space-around;">
+                <a id="delete-link" href="#">
+                    <button type="button" class="btn btn-primary submit m-0 p-0 dep rounded-pill" style="width: 100px; height: 50px;">
+                        <label class="mb-0 mx-auto ms-2">نعم</label>
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-danger bg-danger p-0 rounded-pill" data-bs-dismiss="modal" style="width: 100px; height: 50px;">
+                    <label class="mb-0 mx-auto ms-2">لا</label>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var staticBackdrop2 = document.getElementById('staticBackdrop2');
+
+        staticBackdrop2.addEventListener('show.bs.modal', function (event) {
+
+            var button = event.relatedTarget;
+
+            var itemId = button.getAttribute('data-id');
+
+            var deleteLink = document.getElementById('delete-link');
+            deleteLink.href = '/Dashboard/deleteprodecte/' + itemId;
+        });
+    });
+</script>

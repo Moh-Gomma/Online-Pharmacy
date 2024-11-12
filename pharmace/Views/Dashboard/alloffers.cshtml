@@ -1,0 +1,169 @@
+﻿@model IEnumerable<pharmace.Models.Offer>
+
+@{
+    ViewData["Title"] = "الطلبات";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+<style>
+    .edit {
+        border: none; 
+        border-radius: 4px; 
+        background-color: transparent; 
+        padding: 0; 
+        cursor: pointer; 
+    }
+
+
+</style>
+
+<section class="table-components">
+    <div class="container-fluid">
+        <h4 class="my-4" dir="rtl">العروض</h4>
+        <div class="row my-4">
+            <div class="col-lg-12">
+                <div class="card-style mb-30">
+                    <div class="table-wrapper table-responsive" dir="rtl">
+                        <table class="table mx-auto text-center ">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <h6>الصنف</h6>
+                                    </th>
+
+                                    <th>
+                                        <h6>النسبه</h6>
+                                    </th>
+                                    <th>
+                                        <h6>تعديل</h6>
+                                    </th>
+                                    <th>
+                                        <h6>الغاء</h6>
+                                    </th>
+                                </tr>
+                                <!-- end table row-->
+                            </thead>
+                            <tbody>
+                                @foreach (var c in Model)
+                                {
+                                    <tr>
+
+                                        <td class="min-width">
+                                            <p>@(c.proudect.Name)</p>
+                                        </td>
+                                        <td class="min-width">
+                                            <p>@c.presentage</p>
+                                        </td>
+
+                                        <td>
+                                                <a href="@Url.Action("editoffer", "Dashboard", new { id = c.Id })" style="text-decoration:none;">
+                                                    <button class="edit">
+                                                        <i class="fa-solid fa-pen-to-square"></i>
+                                                    </button>
+                                                </a>
+                                        </td>
+
+                                        <td>
+
+                                            <button type="button" class="btn" data-id="@c.Id" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                                                <i class="fa-regular fa-trash-can" style="color: #ba2121;"></i>
+                                            </button>
+
+  @*                                           <div class="details min-width">
+                                                <a href="@Url.Action("View_OrderDetails", "UsersDashboard", new { id = c.Id })">
+                                                    <button class=" btn btn-info btn-sm text-nowrap">
+                                                        رفض الطلب
+                                                    </button>
+                                                </a>
+                                            </div> *@
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav aria-label="Page navigation example" style="display: flex; align-items: center; justify-content: center;">
+            <ul class="pagination" style="direction: ltr;">
+                <li class="page-item @(ViewBag.CurrentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("alloffers", new { page = ViewBag.CurrentPage - 1 })" aria-label="Previous">&laquo;</a>
+                </li>
+
+                @if (ViewBag.TotalPages > 10)
+                {
+                    var startPage = Math.Max(1, ViewBag.CurrentPage - 4);
+                    var endPage = Math.Min(ViewBag.TotalPages, ViewBag.CurrentPage + 5);
+
+                    if (ViewBag.CurrentPage < 6)
+                    {
+                        endPage = 10;
+                    }
+                    else if (ViewBag.CurrentPage > ViewBag.TotalPages - 5)
+                    {
+                        startPage = ViewBag.TotalPages - 9;
+                    }
+
+                    for (int i = startPage; i <= endPage; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("alloffers", new { page = i  })">@i</a>
+                        </li>
+                    }
+                }
+                else
+                {
+                    for (int i = 1; i <= ViewBag.TotalPages; i++)
+                    {
+                        <li class="page-item @(ViewBag.CurrentPage == i ? "active" : "")">
+                            <a class="page-link" href="@Url.Action("alloffers", new { page = i })">@i</a>
+                        </li>
+                    }
+                }
+
+                <li class="page-item @(ViewBag.CurrentPage == ViewBag.TotalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("alloffers", new { page = ViewBag.CurrentPage + 1 })" aria-label="Next">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</section>
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                هل انت متاكد من حذف هذا العرض ؟
+            </div>
+            <div class="modal-footer" style="justify-content: space-around;">
+                <a id="delete-link" href="#">
+                    <button type="button" class="btn btn-primary submit m-0 p-0 dep rounded-pill" style="width: 100px; height: 50px;">
+                        <label class="mb-0 mx-auto ms-2">نعم</label>
+                        <i class="fa-solid fa-check"></i>
+                    </button>
+                </a>
+                <button type="button" class="btn btn-danger bg-danger p-0 rounded-pill" data-bs-dismiss="modal" style="width: 100px; height: 50px;">
+                    <label class="mb-0 mx-auto ms-2">لا</label>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var staticBackdrop2 = document.getElementById('staticBackdrop2');
+
+        staticBackdrop2.addEventListener('show.bs.modal', function (event) {
+
+            var button = event.relatedTarget;
+
+            var itemId = button.getAttribute('data-id');
+
+            var deleteLink = document.getElementById('delete-link');
+            deleteLink.href = '/Dashboard/deleteoffer/' + itemId;
+        });
+    });
+</script>

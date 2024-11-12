@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "تم تاكيد الطلب";
+}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<body>
+
+ 
+    <!-- NavBar Start End-->
+    <!-- Content -->
+    <div class="container-fluid text-center p-3">
+        <div class="overflow-hidden mx-auto" style="max-width: 800px;">
+            <img src="~/assets/images/offers/orderSuccess.png" class="img-fluid" alt="Order Success">
+        </div>
+        @{
+            PharmacyContext context = new PharmacyContext();
+            int userid;
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "userId");
+            if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+            {
+                userid = userId;
+            }
+            else
+            {
+                userid = 0;
+            }
+
+
+            var user = context.userpermations
+            .Where(c => c.Id == userid).FirstOrDefault();
+        }
+        <div class="text-center mt-4">
+            <p class="fs-4">@user.fname, تم تأكيد طلبك</p>
+            <h2>شكرا لإستخدامك موقعنا</h2>
+        </div>
+
+        <div class="alert text-center alert-light m3-5" role="alert">
+            <i class="fa-solid fa-truck"></i>
+            التوصيل فى خلال ساعة أو ساعتين
+        </div>
+
+        <div class="container mt-4 d-flex flex-column flex-md-row justify-content-center gap-3">
+            <a asp-controller="Home" asp-action="accountinfo" class="btn btn-dark text-nowrap">
+                معلومات الطلب
+                </a>
+            <a asp-controller="Shop" asp-action="ShopHome" class="btn btn-info text-nowrap">
+                شراء دواء اخر
+
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</body>
+</html>
