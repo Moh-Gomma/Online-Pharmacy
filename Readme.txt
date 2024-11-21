@@ -1,5 +1,5 @@
 
-# Pharmacy Store
+#Pharmacy Store
 
 Online Pharmacy Store 
 - User Can Login / Sign up 
@@ -9,8 +9,7 @@ Online Pharmacy Store
 
 
 
-
-## Technologies
+##Technologies
 
 - HTML
 - CSS
@@ -20,7 +19,7 @@ Online Pharmacy Store
 
 
 
-## Live Demo
+##Live Demo
 
 https://secondtestoo.runasp.net/
 
