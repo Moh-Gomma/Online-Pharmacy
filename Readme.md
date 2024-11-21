@@ -1,5 +1,5 @@
 
-#Pharmacy Store
+## Pharmacy Store
 
 Online Pharmacy Store 
 - User Can Login / Sign up 
@@ -9,7 +9,7 @@ Online Pharmacy Store
 
 
 
-##Technologies
+## Technologies
 
 - HTML
 - CSS
