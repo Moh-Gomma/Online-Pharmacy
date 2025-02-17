@@ -23,3 +23,7 @@ Online Pharmacy Store
 
 https://secondtestoo.runasp.net/
 
+Sign in with these info (i Disabled registration )
+Email : 57hngh5mzu@gonetor.com
+Password : 123456789Ahmed#
+
